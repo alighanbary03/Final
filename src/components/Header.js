@@ -8,31 +8,52 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    top: "auto",
+    bottom: 0,
+  },
+  typo: {
+    flexGrow: 1,
+    textAlign: "center",
+  },
+}));
 
 export default function Header() {
+  const classes = useStyles();
   return (
     <AppBar position="static">
       <Toolbar>
         {/*Inside the IconButton, we
 		can render various icons*/}
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-          {/*This is a simple Menu
+        <Grid container justify="flex-end" alignItems="flex-end">
+          <Typography
+            className={classes.typo}
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          >
+            فروشگاه لاکچری
+          </Typography>
+
+          <Button color="inherit">دسته بندی محصولات</Button>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            style={{ bottom: 3, right: 3 }}
+          ></IconButton>
+        </Grid>
+        {/*This is a simple Menu
 			Icon wrapped in Icon */}
-          <MenuIcon />
-        </IconButton>
+        <MenuIcon />
         {/* The Typography component applies
 		default font weights and sizes */}
-
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          GeeksforGeeks Header
-        </Typography>
-        <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
   );
