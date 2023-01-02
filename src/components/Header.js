@@ -10,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@mui/material/Grid";
+import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
+import "../Style/Header.css";
+import { color } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -25,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: "white" }}>
       <Toolbar>
         {/*Inside the IconButton, we
 		can render various icons*/}
@@ -34,24 +37,32 @@ export default function Header() {
             className={classes.typo}
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1 }}
+            sx={{
+              flexGrow: 1,
+              color: "black",
+            }}
           >
             فروشگاه لاکچری
           </Typography>
 
-          <Button color="inherit">دسته بندی محصولات</Button>
+          <Button sx={{ color: "black" }} color="inherit">
+            دسته بندی محصولات
+          </Button>
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
-            style={{ bottom: 3, right: 3 }}
+            sx={{ mr: 2, color: "black" }}
+            style={{ color: "black", bottom: 3, right: 3 }}
           ></IconButton>
+          <div className="login">
+            <AiOutlineUser style={{ fontSize: "30px", color: "black" }} />
+            <AiOutlineShopping style={{ fontSize: "30px", color: "black" }} />
+          </div>
         </Grid>
         {/*This is a simple Menu
 			Icon wrapped in Icon */}
-        <MenuIcon />
+        <MenuIcon sx={{ mr: 2, color: "black" }} />
         {/* The Typography component applies
 		default font weights and sizes */}
       </Toolbar>
