@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
 import "../Style/Header.css";
 import { color } from "@mui/system";
+import Sidebar from "./Sidebar";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -25,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+function Header() {
   const classes = useStyles();
   return (
-    <AppBar position="static" sx={{ bgcolor: "white" }}>
+    <AppBar sx={{ bgcolor: "white" }}>
       <Toolbar>
         {/*Inside the IconButton, we
 		can render various icons*/}
@@ -59,13 +60,20 @@ export default function Header() {
             <AiOutlineUser style={{ fontSize: "30px", color: "black" }} />
             <AiOutlineShopping style={{ fontSize: "30px", color: "black" }} />
           </div>
+          <div className="burger">
+            <Sidebar
+              pageWrapId={"page-wrap"}
+              outerContainerId={"outer-container"}
+            />
+          </div>
         </Grid>
         {/*This is a simple Menu
 			Icon wrapped in Icon */}
-        <MenuIcon sx={{ mr: 2, color: "black" }} />
+
         {/* The Typography component applies
 		default font weights and sizes */}
       </Toolbar>
     </AppBar>
   );
 }
+export default Header;

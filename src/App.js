@@ -1,38 +1,54 @@
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import ImageSlider from "./components/ImageSlider";
+import { ImageData } from "./data/Sliderdata";
+import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/Category";
+import Contact from "./components/Contact";
+import { Carousel } from "@trendyol-js/react-carousel";
+import { Card } from "./components/Card";
+import { useState, useEffect } from "react";
+import data from "./data/data";
+import Grid from "./components/Grid.js";
+import Routing from "./Routers/Routing";
+import Searchbar from "./components/Searchbar";
+import FinalPagination from "./components/FinalPagination";
+
+import "./App.css";
 
 function App() {
+  const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
+  const [cardlist, setCardlist] = useState([]);
+  const [show, setShow] = useState({
+    show: false,
+  });
+  let showModal = () => {
+    setShow({
+      show: true,
+    });
+  };
+  let hideModal = () => {
+    setShow({
+      show: false,
+    });
+  };
+  const [dataModal, setDataModal] = useState({
+    url: "",
+    id: "",
+    title: "",
+    des: "",
+    price: "",
+    sizes: [],
+  });
   return (
-    // Using the newly created Header
-    // component in this main component
     <>
       <Header />
-      <Router>
-        <div className="App">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About Us</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Us</Link>
-            </li>
-          </ul>
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/about" element={<About />}></Route>
-            <Route exact path="/contact" element={<Contact />}></Route>
-          </Routes>
-        </div>
-      </Router>
-      <Footer />
+      <Routing></Routing>
+      {/* <Searchbar></Searchbar> */}
+      <FinalPagination></FinalPagination>
     </>
   );
 }

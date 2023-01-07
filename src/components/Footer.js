@@ -7,17 +7,20 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
+import logo from "../logo.svg";
 
 const Footer = () => {
   return (
-    <Box>
+    <div>
       <Container>
         <Row>
           <Column>
             <Heading>چرا لاکچری</Heading>
+            <img src={logo} alt="Logo" />;
           </Column>
           <Column>
             <Heading>درباره ما</Heading>
+            <img src={logo} alt="Logo" />;
           </Column>
           <Column>
             <Heading>تماس با ما</Heading>
@@ -27,7 +30,7 @@ const Footer = () => {
           </Column>
         </Row>
       </Container>
-    </Box>
+    </div>
   );
 };
 export default Footer;
