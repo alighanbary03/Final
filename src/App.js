@@ -1,24 +1,34 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ImageSlider from "./components/ImageSlider";
-import { ImageData } from "./data/Sliderdata";
+import Header from "./layouts/header/Header";
+import Footer from "./layouts/footer/Footer";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/Category";
-import Contact from "./components/Contact";
+import Home from "./pages/Home/Home";
+import About from "./pages/Category/Category";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { Card } from "./components/Card";
 import { useState, useEffect } from "react";
 import data from "./data/data";
-import Grid from "./components/Grid.js";
+import Grid from "./components/Gridi.js";
 import Routing from "./Routers/Routing";
-import Searchbar from "./components/Searchbar";
-import FinalPagination from "./components/FinalPagination";
-
+import Searchbar from "./pages/Searchbar";
+import FinalPagination from "./pages/FinalPagination/FinalPagination";
+import Layout from "./components/shared/Layout";
 import "./App.css";
-
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import Example from "./components/ImgSlide";
+import AllFruits from "./pages/AllFruits";
+import AddFruit from "./pages/AddProduct/AddFruit";
+import UpdateFruit from "./pages/UpdateFruit";
+import PaginatedItems from "./components/MainPaginate";
+import MainPaginate from "./components/MainPaginate";
+import JsonOrders from "./pages/JsonOrders";
+import MainGallery from "./components/MainGallery";
+import MainSidebar from "./components/MainSidebar";
+import SliderMain from "./components/SliderM";
+import Navcat from "./components/NavCat";
+import MultipleItems from "./components/MultiCard";
 function App() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
   const [cardlist, setCardlist] = useState([]);
@@ -45,10 +55,19 @@ function App() {
   });
   return (
     <>
-      <Header />
-      <Routing></Routing>
-      {/* <Searchbar></Searchbar> */}
-      <FinalPagination></FinalPagination>
+      <div>
+        <Header />
+      </div>
+      <div className="main">
+        <Routing></Routing>
+      </div>
+      <Footer />
+
+      {/* <MultipleItems></MultipleItems> */}
+
+      {/* <SliderMain></SliderMain> */}
+      {/* <JsonOrders></JsonOrders> */}
+      {/* <MainGallery></MainGallery> */}
     </>
   );
 }

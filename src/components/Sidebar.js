@@ -7,9 +7,8 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Home from "./Home";
-import About from "./Category";
-import Contact from "./Contact";
+import Home from "../pages/Home/Home";
+import About from "../pages/Category/Category";
 import "../Style/Sidebar.css";
 
 export default (props) => {
@@ -21,12 +20,30 @@ export default (props) => {
       <NavLink to="/category" className="menu-item">
         لباس
       </NavLink>
-      <a className="menu-item" href="/pizzas">
-        Pizzas
-      </a>
-      <a className="menu-item" href="/desserts">
-        Desserts
-      </a>
+      <NavLink to="/search" className="menu-item">
+        جست و جو
+      </NavLink>
+      <NavLink to="/all" className="menu-item">
+        همه محصولات
+      </NavLink>
+      <NavLink to="/register" className="menu-item">
+        ثبت نام
+      </NavLink>
+      <NavLink to="/login" className="menu-item">
+        ورود
+      </NavLink>
+      <NavLink to="/cardlist" className="menu-item">
+        سبد خرید
+      </NavLink>
+      <NavLink to="/admin" className="menu-item">
+        مدیریت
+      </NavLink>
+      <NavLink to="/orders" className="menu-item">
+        سفارشات
+      </NavLink>
+      <NavLink to="/order-customer" className="menu-item">
+        پیگیری سفارشات
+      </NavLink>
     </Menu>
   );
 };

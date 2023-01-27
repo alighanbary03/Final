@@ -3,9 +3,17 @@
   margin-top: 100px;
 } */
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+article {
+  margin: auto 0;
+}
 .Grid {
   align-items: center;
-  margin-left: 300px;
+  /* margin-left: 65px; */
 }
 .App-logo {
   height: 40vmin;
@@ -34,6 +42,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px 0;
+  width: 70%;
 }
 
 .App-link {
@@ -49,14 +58,26 @@
   }
 }
 
+.Slide {
+  height: 500px;
+}
+
 .main {
-  margin-top: 100px;
-  display: flex;
-  height: 100vh;
+  margin-top: 150px;
+  /* display: flex; *
+
   width: 100%;
-  align-items: center;
+  /* align-items: center;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 20px; */
+}
+.card {
+  width: 30%;
+  height: auto;
+  background-color: bisque;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 50%;
 }
 
 h1 {
@@ -72,3 +93,55 @@ h1 {
 ul li {
   font-size: 20px;
 }
+
+.footer {
+  margin-top: 500px;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.navigationButtons {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.navigationButtons a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+}
+
+.navigationButtons a:hover {
+  color: white;
+  background-color: red;
+}
+
+.navigationActive a {
+  color: white;
+  background-color: red;
+}
+
+.navigationDisabled a {
+  color: grey;
+  background-color: grey;
+}
+
+.right {
+  position: absolute;
+  right: 50px;
+}
+/* 
+.right2 {
+  position: absolute;
+  top: 0;
+} */

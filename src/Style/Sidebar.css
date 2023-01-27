@@ -26,6 +26,7 @@
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
+  margin-top: 10px;
 }
 
 /*
@@ -41,6 +42,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  margin-top: 15px;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -52,11 +54,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  margin-left: 120px;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  background-color: #a90000;
+  border-radius: 5px;
+  padding: 10px;
+  width: 120px;
 }
 
 /* Styling of overlay */

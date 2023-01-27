@@ -13,7 +13,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@trendyol-js/react-carousel": "^3.0.0",
+    "axios": "^1.2.3",
     "bootstrap": "^5.2.3",
+    "mdb-react-ui-kit": "^5.1.0",
+    "mdbreact": "^5.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-grid-component": "^0.2.5",
@@ -21,20 +24,27 @@
     "react-dom": "^18.2.0",
     "react-grid-gallery": "^1.0.0",
     "react-icons": "^4.7.1",
+    "react-paginate": "^8.1.4",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-simple-image-slider": "^2.4.1",
+    "react-slick": "^0.29.0",
     "react-slideshow-image": "^4.1.1",
     "react-snap-carousel": "^0.0.3",
+    "rodal": "^2.0.1",
     "sass": "^1.57.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json-server": "json-server --watch db.json --port 4000",
+    "json-server2": "json-server --watch Stockdb.json --port 5000",
+    "json-server3": "json-server --watch dborders.json --port 2000"
   },
   "eslintConfig": {
     "extends": [

@@ -8,16 +8,16 @@ export const Navbar = ({ filter, setfilter, len }) => {
 
   return (
     <div className="menu">
-      <div>{len} Products</div>
+      <div>{len} محصول</div>
       <div>
-        <span>Order </span>
+        <span> قیمت مرتب سازی بر اساس قیمت </span>
         <select onChange={change} value={filter.price} name="price" id="">
-          <option value="lowest">Lowest</option>
-          <option value="highes">Highest</option>
+          <option value="lowest">کم ترین قیمت</option>
+          <option value="highest">بیشترین قیمت</option>
         </select>
       </div>
       <div>
-        <span>Filter </span>
+        <span>سایز بندی </span>
         <select name="size" onChange={change} value={filter.size} id="">
           <option value="ALL">All</option>
           <option value="XS">XS</option>
