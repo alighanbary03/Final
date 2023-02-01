@@ -9,13 +9,14 @@ export default class MultipleItems extends Component {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 3,
+      arrows: true,
     };
     return (
       <div>
         <h2> Multiple items </h2>
         <Slider {...settings}>
           <div>
-            <h3>1</h3>
+            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" />
           </div>
           <div>
             <h3>2</h3>

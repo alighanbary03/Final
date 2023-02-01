@@ -25,11 +25,11 @@ function List(props) {
             <Card
               key={item.id}
               id={item.id}
-              url={item.url}
-              description={item.text}
+              url={item.ImgUrl}
+              des={item.des}
               price={item.price}
             >
-              {item.description}
+              {item.name}
             </Card>
           ))}
         </ul>

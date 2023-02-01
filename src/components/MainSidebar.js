@@ -23,9 +23,12 @@ export default function MainSidebar() {
 
   return (
     <>
-      <section className="mb-1">
-        <MDBNavbar>
+      <section style={{ borderRadius: "50px" }} className="mb-1 cont">
+        <MDBNavbar style={{ borderRadius: "50px" }}>
           <MDBContainer fluid>
+            <p className="mti" style={{ color: "black" }}>
+              نقشه سایت
+            </p>
             <MDBNavbarToggler
               type="button"
               className="first-button"
@@ -44,8 +47,11 @@ export default function MainSidebar() {
           </MDBContainer>
         </MDBNavbar>
 
-        <MDBCollapse show={showAnimated}>
-          <div className="bg-light shadow-3 p-4">
+        <MDBCollapse show={showAnimated} style={{ borderRadius: "50px" }}>
+          <div
+            className="bg-light shadow-3 p-4"
+            style={{ borderRadius: "50px" }}
+          >
             <MDBBtn block className="border-bottom m-0" color="link">
               <NavLink to="/home" className="menu-item">
                 Home

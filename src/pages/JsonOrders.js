@@ -211,119 +211,131 @@ function JsonOrders() {
     }
   };
   return (
-    <MDBContainer>
-      <form
-        style={{
-          margin: "auto",
-          padding: "15px",
-          maxWidth: "400px",
-          alignContent: "center",
-        }}
-        className="d-flex input-group w-auto"
-        onSubmit={handleSearch}
-      >
-        <input
-          type="text"
-          // className="form-control"
-          placeholder="Search Name ... "
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        {/* <MDBBtnGroup> */}
-        <MDBBtn type="submit" color="dark">
-          جست و جو
-        </MDBBtn>
-        <MDBBtn className="mx-2" color="info" onClick={() => handleReset()}>
-          تازه سازی
-        </MDBBtn>
-        {/* </MDBBtnGroup> */}
-      </form>
-      <div style={{ marginTop: "100px" }}>
-        <h2 className="text-center">پیگیری سفارشات</h2>
-        <MDBRow>
-          <MDBCol size={"12"}>
-            <MDBTable>
-              <MDBTableHead dark>
-                <tr>
-                  <th scope="col">شماره</th>
-                  <th scope="col">نام</th>
-                  <th scope="col">ایمیل</th>
-                  <th scope="col">شماره تلفن</th>
-                  <th scope="col">آدرس</th>
-                  <th scope="col">وضعیت</th>
-                </tr>
-              </MDBTableHead>
-              {data.length === 0 ? (
-                <MDBTableBody className="align-center mb-0">
-                  <tr>
-                    <td colSpan={8} className="text-center mb-0">
-                      چیزی یافت نشد
-                    </td>
-                  </tr>
-                </MDBTableBody>
-              ) : (
-                data.map((item, index) => (
-                  <MDBTableBody key={index}>
-                    <tr>
-                      <th scope="row">{index + 1}</th>
-                      <td>{item.name}</td>
-                      <td>{item.email}</td>
-                      <td>{item.phone}</td>
-                      <td>{item.address}</td>
-                      <td>{item.status}</td>
-                    </tr>
-                  </MDBTableBody>
-                ))
-              )}
-            </MDBTable>
-          </MDBCol>
-        </MDBRow>
-        <div
+    <>
+      <h2 className="text-center" style={{ fontFamily: "BNazanin" }}>
+        مدیریت سفارشات
+      </h2>
+      <MDBContainer style={{ marginBottom: "300px" }}>
+        <form
           style={{
             margin: "auto",
-            padding: "15px",
+            // padding: "15px",
             maxWidth: "400px",
             alignContent: "center",
           }}
+          className="d-flex input-group w-auto"
+          onSubmit={handleSearch}
         >
-          {renderPagination()}
+          <input
+            type="text"
+            // className="form-control"
+            placeholder="جست و جوی نام"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            style={{ borderRadius: "20px", width: "500px" }}
+          />
+          {/* <MDBBtnGroup> */}
+          <MDBBtn type="submit" color="dark">
+            جست و جو
+          </MDBBtn>
+          <MDBBtn className="mx-2" color="info" onClick={() => handleReset()}>
+            تازه سازی
+          </MDBBtn>
+          {/* </MDBBtnGroup> */}
+        </form>
+        <div>
+          <MDBRow>
+            <MDBCol size={"12"}>
+              <MDBTable>
+                <MDBTableHead dark>
+                  <tr>
+                    <th scope="col">شماره</th>
+                    <th scope="col">نام</th>
+                    <th scope="col">ایمیل</th>
+                    <th scope="col">شماره تلفن</th>
+                    <th scope="col">آدرس</th>
+                    <th scope="col">وضعیت</th>
+                  </tr>
+                </MDBTableHead>
+                {data.length === 0 ? (
+                  <MDBTableBody className="align-center mb-0">
+                    <tr>
+                      <td colSpan={8} className="text-center mb-0">
+                        چیزی یافت نشد
+                      </td>
+                    </tr>
+                  </MDBTableBody>
+                ) : (
+                  data.map((item, index) => (
+                    <MDBTableBody key={index}>
+                      <tr>
+                        <th scope="row">{index + 1}</th>
+                        <td>{item.name}</td>
+                        <td>{item.email}</td>
+                        <td>{item.phone}</td>
+                        <td>{item.address}</td>
+                        <td>{item.status}</td>
+                      </tr>
+                    </MDBTableBody>
+                  ))
+                )}
+              </MDBTable>
+            </MDBCol>
+          </MDBRow>
+          <div
+            style={{
+              margin: "auto",
+              padding: "15px",
+              maxWidth: "400px",
+              alignContent: "center",
+            }}
+          >
+            {renderPagination()}
+          </div>
         </div>
-      </div>
-      {data.length > 0 && (
-        <MDBRow>
-          <MDBCol size={"8"}>
-            <h5>دسته بندی بر اساس</h5>
-            <select
-              style={{ width: "50%", borderRadius: "2px", height: "35px" }}
-              onChange={handleSort}
-              value={sortvalue}
-            >
-              <option>لطفا یک مورد را انتخاب کنید</option>
-              {sortOptions.map((item, index) => (
-                <option value={item} key={index}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </MDBCol>
-          <MDBCol size={"4"}>
-            <h5>فیلتر بر اساس تحویل</h5>
-            <MDBBtnGroup>
-              <MDBBtn color="success" onClick={() => handleFilter("تحویل شد")}>
-                تحویل داده شده
-              </MDBBtn>
-              <MDBBtn
-                color="danger"
-                style={{ marginLeft: "2px" }}
-                onClick={() => handleFilter("تحویل نشده")}
+        {data.length > 0 && (
+          <MDBRow>
+            <MDBCol size={"8"}>
+              <div dir="rtl">
+                <h5 dir="rtl" style={{ marginLeft: "220px" }}>
+                  دسته بندی بر اساس
+                </h5>
+              </div>
+              <select
+                style={{ width: "50%", borderRadius: "25px", height: "35px" }}
+                onChange={handleSort}
+                value={sortvalue}
               >
-                تحویل داده نشده
-              </MDBBtn>
-            </MDBBtnGroup>
-          </MDBCol>
-        </MDBRow>
-      )}
-    </MDBContainer>
+                <option>لطفا یک مورد را انتخاب کنید</option>
+                {sortOptions.map((item, index) => (
+                  <option value={item} key={index}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </MDBCol>
+            <MDBCol size={"4"}>
+              <h5>فیلتر بر اساس تحویل</h5>
+              <MDBBtnGroup>
+                <MDBBtn
+                  color="success"
+                  onClick={() => handleFilter("تحویل شد")}
+                >
+                  تحویل داده شده
+                </MDBBtn>
+                <MDBBtn
+                  color="danger"
+                  style={{ marginLeft: "2px" }}
+                  onClick={() => handleFilter("تحویل نشده")}
+                >
+                  تحویل داده نشده
+                </MDBBtn>
+              </MDBBtnGroup>
+            </MDBCol>
+          </MDBRow>
+        )}
+      </MDBContainer>
+    </>
   );
 }
 

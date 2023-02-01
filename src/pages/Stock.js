@@ -34,6 +34,7 @@ function Stock() {
     axios
       .delete(`http://localhost:5000/fruits/${itemToDeleteId}`)
       .then((response) => {
+        // response.headers({token});
         setAllFruits((previousState) => {
           return previousState.filter((_) => _.id !== itemToDeleteId);
         });
@@ -61,12 +62,16 @@ function Stock() {
           </Button>
         </Col>
       </Row>
-      <Row xs={1} md={3} className="g-2">
+      <Row xs={1} md={3} className="g-5">
         {allFruits.map((item) => (
           <Col key={item.id}>
-            <Card>
-              <Card.Img variant="top" src={item.url} style={{ height: 300 }} />
-              <Card.Body>
+            <Card style={{ height: 500, width: 400 }}>
+              <Card.Img
+                variant="top"
+                src={item.url}
+                style={{ height: 300, width: 200 }}
+              />
+              <Card.Body style={{ height: 400, width: 300 }}>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>تعداد - {item.quantity}</Card.Text>
                 <Card.Text>قیمت - {item.price}</Card.Text>

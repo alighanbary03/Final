@@ -10,9 +10,14 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@mui/material/Grid";
-import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import {
+  AiOutlineUser,
+  AiOutlineShopping,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import "../../Style/Header.css";
-import { color } from "@mui/system";
+import { color, width } from "@mui/system";
 import MainSidebar from "../../components/MainSidebar";
 import Navcat from "../../components/NavCat";
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Header() {
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <div>
@@ -75,6 +81,10 @@ function Header() {
             <div className="login">
               <AiOutlineUser style={{ fontSize: "70px", color: "black" }} />
               <AiOutlineShopping style={{ fontSize: "70px", color: "black" }} />
+              <AiOutlineSearch
+                style={{ fontSize: "70px", color: "black" }}
+                onClick={() => navigate("/search")}
+              />
             </div>
             {/* <div className="burger">
               <Sidebar
@@ -92,6 +102,8 @@ function Header() {
         <div dir="rtl">
           <Navcat></Navcat>
         </div>
+      </AppBar>
+      <AppBar sx={{ bgcolor: "white", width: "200px" }}>
         <div dir="rtl">
           <MainSidebar></MainSidebar>
         </div>

@@ -11,6 +11,9 @@ import UpdateFruit from "../pages/UpdateFruit";
 import AdminPanel from "../pages/AdminPanel/AdminPanel";
 import Orders from "../pages/Orders";
 import JsonOrders from "../pages/JsonOrders";
+import AdminTab from "../pages/AdminTab";
+import NewCard from "../components/NewCard";
+import Single from "../pages/SinglePage";
 
 function Routing() {
   return (
@@ -27,6 +30,8 @@ function Routing() {
       <Route path="/admin" element={<AdminPanel />}></Route>
       <Route path="/orders" element={<Orders />}></Route>
       <Route path="/order-customer" element={<JsonOrders />}></Route>
+      <Route path="/admin-tab" element={<AdminTab />}></Route>
+      <Route path="/single/:id" element={<Single />}></Route>
     </Routes>
   );
 }

@@ -22,7 +22,9 @@ export default function Navcat() {
   return (
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="#">لباس</MDBNavbarBrand>
+        <MDBNavbarBrand href="#" style={{ fontFamily: "BNazanin" }}>
+          کالکشن ها:
+        </MDBNavbarBrand>
 
         <MDBNavbarToggler
           aria-controls="navbarSupportedContent"
@@ -36,12 +38,54 @@ export default function Navcat() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current="page" href="#">
-                اسپرت
+              <MDBNavbarLink
+                active
+                aria-current="page"
+                href="#"
+                style={{ fontFamily: "BNazanin" }}
+              >
+                پاییزه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">کفش</MDBNavbarLink>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                زمستانه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                بهاره
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                زنانه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                مردانه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                تابستانه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                پاییزه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                بچگانه
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+                اسپرت
+              </MDBNavbarLink>
             </MDBNavbarItem>
 
             {/* <MDBNavbarItem>

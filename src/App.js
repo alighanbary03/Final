@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./layouts/header/Header";
-import Footer from "./layouts/footer/Footer";
+
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -29,6 +29,17 @@ import MainSidebar from "./components/MainSidebar";
 import SliderMain from "./components/SliderM";
 import Navcat from "./components/NavCat";
 import MultipleItems from "./components/MultiCard";
+import Gallery from "./components/Gallery";
+import AdminTab from "./pages/AdminTab";
+import Footer from "./layouts/footer/Footer";
+
+import NewHeader from "./layouts/NewHeader";
+import NewStock from "./pages/NewStock";
+import StockDet from "./components/StockDet";
+import NewCardMen from "./pages/Category/NewCardMen";
+import NewCard from "./components/NewCard";
+import CatTitle from "./components/CatTitleMen";
+
 function App() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
   const [cardlist, setCardlist] = useState([]);
@@ -55,16 +66,23 @@ function App() {
   });
   return (
     <>
-      <div>
-        <Header />
-      </div>
-      <div className="main">
+      <NewHeader></NewHeader>
+      <div className="main" dir="rtl">
         <Routing></Routing>
       </div>
-      <Footer />
+      <Footer></Footer>
+      {/* <CatTitle></CatTitle> */}
 
+      {/* <Login></Login> */}
+      {/* <Searchbar></Searchbar> */}
+      {/* <NewCard></NewCard> */}
+
+      {/* <StockDet></StockDet> */}
+      {/* <NewCardMen></NewCardMen> */}
+      {/* <NewStock></NewStock> */}
+      {/* <AdminTab></AdminTab> */}
+      {/* <Gallery></Gallery> */}
       {/* <MultipleItems></MultipleItems> */}
-
       {/* <SliderMain></SliderMain> */}
       {/* <JsonOrders></JsonOrders> */}
       {/* <MainGallery></MainGallery> */}

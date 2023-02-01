@@ -13,9 +13,9 @@ function Searchbar() {
 
   return (
     <>
-      <div className="main">
-        <h1>جست و جوی محصولات</h1>
+      <div>
         <div className="search">
+          <h1 className="title">جست و جوی محصولات</h1>
           <TextField
             id="outlined-basic"
             onChange={inputHandler}

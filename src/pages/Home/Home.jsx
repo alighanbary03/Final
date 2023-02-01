@@ -19,6 +19,24 @@ import "../../App.css";
 import CarouselFadeExample from "../../components/ImgSlide";
 import MainGallery from "../../components/MainGallery";
 import SliderMain from "../../components/SliderM";
+import Gallery from "../../components/Gallery";
+import NewCard from "../../components/NewCard";
+import CatTitleMen from "../../components/CatTitleMen";
+import NewCardMen from "../Category/NewCardMen";
+import CatTitleW from "../../components/CatTitleW";
+import NewCardW from "../Category/NewCardW";
+import CatTitleB from "../../components/CardTitleB";
+import NewCardS from "../Category/NewCardS";
+import NewCardB from "../Category/NewCardB";
+import CatTitleSpi from "../../components/CardTitleSpi";
+import NewCardSpi from "../Category/NewCardSpi";
+import CatTitleS from "../../components/CardTitleS";
+import CatTitleF from "../../components/CatTitleF";
+import CatTitleWi from "../../components/CatTitleWi";
+import NewCardWi from "../Category/NewCardWi";
+import NewCardF from "../Category/NewCardF";
+import NewCardSpo from "../Category/NewCardF";
+import CatTitleSpo from "../../components/CatTitleSpo";
 
 function Home() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -78,104 +96,30 @@ function Home() {
     }
   }, [filter]);
   return (
-    // Using the newly created Header
-    // component in this main component
     <>
-      {show.show && (
-        <Modals
-          show={showModal}
-          hide={hideModal}
-          datamodal={dataModal}
-          cardlist={cardlist}
-          setCardlist={setCardlist}
-        />
-      )}
-      <div>
+      <div className="z1">
         <SliderMain></SliderMain>
       </div>
-      <div className="card-section">
-        {json.map((item, index) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            url={item.url}
-            description={item.description}
-            price={item.price}
-            cardlist={cardlist}
-            setCardlist={setCardlist}
-            show={showModal}
-            hide={hideModal}
-            datamodal={dataModal}
-            setdatamodal={setDataModal}
-          />
-        ))}
-        <div className="right">
-          <Menubar cardlist={cardlist} />
-          {cardlist.map((item) => (
-            <Mainform
-              key={item.id}
-              id={item.id}
-              url={item.url}
-              description={item.description}
-              price={item.price}
-              count={item.count}
-              cardlist={cardlist}
-              setCardlist={setCardlist}
-            />
-          ))}
-        </div>
-      </div>
+      <CatTitleMen></CatTitleMen>
+      <NewCardMen></NewCardMen>
+      <CatTitleW></CatTitleW>
+      <NewCardW></NewCardW>
+      <CatTitleB></CatTitleB>
+      <NewCardB></NewCardB>
+      <CatTitleSpi></CatTitleSpi>
+      <NewCardSpi></NewCardSpi>
+      <CatTitleS></CatTitleS>
+      <NewCardS></NewCardS>
+      <CatTitleF></CatTitleF>
+      <NewCardF></NewCardF>
+      <CatTitleWi></CatTitleWi>
+      <NewCardWi></NewCardWi>
+      <CatTitleSpo></CatTitleSpo>
+      <NewCardSpo></NewCardSpo>
+      <Gallery></Gallery>
+
       <div>
         <MainGallery></MainGallery>
-      </div>
-      {/* <div className="card-section">
-        {json.map((item, index) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            url={item.url}
-            description={item.description}
-            price={item.price}
-            cardlist={cardlist}
-            setCardlist={setCardlist}
-            show={showModal}
-            hide={hideModal}
-            datamodal={dataModal}
-            setdatamodal={setDataModal}
-          />
-        ))}
-      </div> */}
-      <div className="card-section">
-        {json.map((item, index) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            url={item.url}
-            description={item.description}
-            price={item.price}
-            cardlist={cardlist}
-            setCardlist={setCardlist}
-            show={showModal}
-            hide={hideModal}
-            datamodal={dataModal}
-            setdatamodal={setDataModal}
-          />
-        ))}
-        <div className="right">
-          <Menubar cardlist={cardlist} />
-          {cardlist.map((item) => (
-            <Mainform
-              key={item.id}
-              id={item.id}
-              url={item.url}
-              description={item.description}
-              price={item.price}
-              count={item.count}
-              cardlist={cardlist}
-              setCardlist={setCardlist}
-            />
-          ))}
-        </div>
       </div>
     </>
   );

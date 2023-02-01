@@ -7,7 +7,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: "BNazanin";
 }
+@font-face {
+  font-family: "BNazanin";
+  src: local("BNazanin"), url(./assets/fonts/BNazanin.ttf) format("truetype");
+}
+
 article {
   margin: auto 0;
 }
@@ -63,7 +69,8 @@ article {
 }
 
 .main {
-  margin-top: 150px;
+  /* margin-top: 150px; */
+  z-index: 1;
   /* display: flex; *
 
   width: 100%;
@@ -88,8 +95,13 @@ h1 {
 
 .search {
   width: 30%;
+  margin-left: 700px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
-
+.title {
+  margin-left: 100px;
+}
 ul li {
   font-size: 20px;
 }
@@ -145,3 +157,20 @@ ul li {
   position: absolute;
   top: 0;
 } */
+
+/* .NewCard {
+  height: 50px;
+  margin-top: 10px;
+} */
+
+.head {
+  z-index: 100000;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.App {
+  margin-bottom: 100px;
+}

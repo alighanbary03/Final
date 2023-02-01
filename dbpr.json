@@ -1,0 +1,29 @@
+{
+  "students": [
+    {
+      "name": "Vikas",
+      "email": "vikas@gmail.com",
+      "year": "75",
+      "fee": "52621",
+      "id": 3,
+      "quantity": "ccccc"
+    },
+    {
+      "name": "Vikas Kumar",
+      "email": "vikas62081@gmail.com",
+      "id": 4,
+      "year": "21",
+      "fee": "102030"
+    },
+    {
+      "id": 5
+    },
+    {
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "year": "25",
+      "fee": "784596",
+      "id": 6
+    }
+  ]
+}

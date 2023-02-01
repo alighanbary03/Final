@@ -176,6 +176,14 @@
   margin-left: 700px;
 }
 
-.menu-item {
+/* .menu-item {
   margin-left: 1400px;
+} */
+
+.cont {
+  width: 200px;
+}
+
+.mti {
+  margin-top: 20px;
 }
