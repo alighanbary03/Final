@@ -134,9 +134,14 @@ export default function FormDialog({
             <div class="custom-select" style={{ width: "200px" }}>
               <select value={cat} onChange={onInputChange} id="cat" name="cat">
                 <option value="0">انتخاب دسته بندی:</option>
-                <option value="لباس">لباس</option>
-                <option value="کفش"></option>
-                <option value="اکسسوری">بچگانه</option>
+                <option value="مردانه">مردانه</option>
+                <option value="زنانه">زنانه</option>
+                <option value="بچگانه">بچگانه</option>
+                <option value="بهاره">بهاره</option>
+                <option value="تابستانه">تابستانه</option>
+                <option value="پاییزه">پاییزه</option>
+                <option value="زمستانه">زمستانه</option>
+                <option value="اسپرت">اسپرت</option>
               </select>
             </div>
             <div class="custom-select" style={{ width: "200px" }}>
@@ -147,9 +152,9 @@ export default function FormDialog({
                 name="subcat"
               >
                 <option value="0">انتخاب دسته بندی:</option>
-                <option value="مردانه">مردانه</option>
-                <option value="زنانه">زنانه</option>
-                <option value="بچگانه">بچگانه</option>
+                <option value="لباس">لباس</option>
+                <option value="کفش">کفش</option>
+                <option value="اکسسوری">اکسسوری</option>
               </select>
             </div>
             <textarea

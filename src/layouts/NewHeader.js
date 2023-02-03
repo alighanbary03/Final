@@ -30,12 +30,16 @@ function NewHeader() {
               />
             </form>
 
-            <div className="login">
+            <div className="logini">
               <AiOutlineUser
                 style={{ fontSize: "30px", color: "black", cursor: "pointer" }}
-                onClick={() => navigate("/admin-tab")}
+                onClick={() => navigate("/login")}
               />
               <AiOutlineShopping style={{ fontSize: "30px", color: "black" }} />
+              <AiOutlineSearch
+                style={{ fontSize: "30px", color: "black", cursor: "pointer" }}
+                onClick={() => navigate("/search")}
+              />
             </div>
             <div className="title">
               <h1 style={{ fontFamily: "BNazanin" }}>لاکچری لند</h1>

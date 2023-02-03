@@ -26,7 +26,10 @@ export default function MainSidebar() {
       <section style={{ borderRadius: "50px" }} className="mb-1 cont">
         <MDBNavbar style={{ borderRadius: "50px" }}>
           <MDBContainer fluid>
-            <p className="mti" style={{ color: "black" }}>
+            <p
+              className="mti"
+              style={{ color: "black", fontFamily: "BNazanin" }}
+            >
               نقشه سایت
             </p>
             <MDBNavbarToggler
@@ -53,56 +56,121 @@ export default function MainSidebar() {
             style={{ borderRadius: "50px" }}
           >
             <MDBBtn block className="border-bottom m-0" color="link">
-              <NavLink to="/home" className="menu-item">
-                Home
+              <NavLink
+                to="/home"
+                className="menu-item"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
+                خانه
               </NavLink>
             </MDBBtn>
             <MDBBtn block className="border-bottom m-0" color="link">
-              <NavLink to="/register" className="menu-item">
+              <NavLink
+                to="/register"
+                className="menu-item"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
                 ثبت نام
               </NavLink>
             </MDBBtn>
             <MDBBtn block className="border-bottom m-0" color="link">
-              <NavLink to="/cardlist" className="menu-item">
+              <NavLink
+                to="/cardlist"
+                className="menu-item"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
                 سبد خرید
               </NavLink>
             </MDBBtn>
             <MDBBtn block className="border-bottom m-0" color="link">
-              <NavLink to="/login" className="menu-item">
+              <NavLink
+                to="/login"
+                className="menu-item"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
                 ورود
               </NavLink>
             </MDBBtn>
             <MDBBtn block className="border-bottom m-0" color="link">
-              <NavLink to="/search" className="menu-item">
+              <NavLink
+                to="/search"
+                className="menu-item"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
                 جست و جو
               </NavLink>
             </MDBBtn>
             <MDBAccordion flush initialActive={1}>
-              <MDBAccordionItem collapseId={1} headerTitle="دسته بندی">
+              <MDBAccordionItem collapseId={1} headerTitle="زیرگروه ها">
                 <div>
-                  <NavLink to="/category" className="menu-item">
+                  <NavLink
+                    to="/lebas"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
                     لباس
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/category" className="menu-item">
+                  <NavLink
+                    to="/kafsh"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
                     کفش
                   </NavLink>
                 </div>
-              </MDBAccordionItem>
-              <MDBAccordionItem collapseId={2} headerTitle="مدیریت">
                 <div>
-                  <NavLink to="/admin" className="menu-item">
+                  <NavLink
+                    to="/accessory"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
+                    اکسسوری
+                  </NavLink>
+                </div>
+              </MDBAccordionItem>
+              <MDBAccordionItem
+                collapseId={2}
+                headerTitle="مدیریت"
+                dir="rtl"
+                style={{ fontFamily: "BNazanin" }}
+              >
+                <div>
+                  <NavLink
+                    to="/admin"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
                     موجودی انبار
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/order-customer" className="menu-item">
+                  <NavLink
+                    to="/order-customer"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
                     پیگیری سفارشات
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink to="/orders" className="menu-item">
+                  <NavLink
+                    to="/orders"
+                    className="menu-item"
+                    dir="rtl"
+                    style={{ fontFamily: "BNazanin" }}
+                  >
                     سفارشات
                   </NavLink>
                 </div>

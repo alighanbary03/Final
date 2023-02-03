@@ -5,7 +5,7 @@ import Gridi from "./Gridi";
 import Header from "../layouts/header/Header";
 function List(props) {
   //create a new array by filtering the original array
-  const filteredData = data.filter((el) => {
+  const filteredData = data.users((el) => {
     return el.text.toLocaleLowerCase().includes(props.input);
 
     //if no input the return the original
@@ -25,11 +25,11 @@ function List(props) {
             <Card
               key={item.id}
               id={item.id}
-              url={item.ImgUrl}
-              des={item.des}
-              price={item.price}
+              url={item.url}
+              des={item.text}
+              price={item.text}
             >
-              {item.name}
+              {item.text}
             </Card>
           ))}
         </ul>

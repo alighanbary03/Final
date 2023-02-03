@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import "../../Style/components/NewCard.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CatTitleS from "../../components/CardTitleS";
 // import NewModal from "./NewModal";
 
 function NewCardS() {
@@ -54,6 +55,7 @@ function NewCardS() {
           title={fruitName}
           body={url}
         /> */}
+        <CatTitleS></CatTitleS>
         <Row xs={1} md={3} className="g-5">
           {allFruits.map((item) => (
             <>
@@ -71,7 +73,7 @@ function NewCardS() {
 
                     <div className="contentBx">
                       <div className="arrow"></div>
-                      <h2>{item.name}</h2>
+                      <h2 style={{ fontFamily: "BNazanin" }}>{item.name}</h2>
                       <div className="size">
                         <h3>قیمت :{item.price}</h3>
                         {/* <span>7</span>

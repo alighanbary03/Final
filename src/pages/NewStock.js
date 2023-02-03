@@ -117,10 +117,7 @@ function NewStock() {
   };
   //deleting a user
   const handleDelete = (id) => {
-    const confirm = window.confirm(
-      "Are you sure, you want to delete this row",
-      id
-    );
+    const confirm = window.confirm("آیا از حذف کالا اطمینان دارید؟", id);
     if (confirm) {
       fetch(url + `/${id}`, { method: "DELETE" })
         .then((resp) => resp.json())
@@ -136,9 +133,7 @@ function NewStock() {
   const handleFormSubmit = () => {
     if (formData.id) {
       //updating a user
-      const confirm = window.confirm(
-        "Are you sure, you want to update this row ?"
-      );
+      const confirm = window.confirm("آیا از ویرایش کالا اطمینان دارید؟");
       confirm &&
         fetch(url + `/${formData.id}`, {
           method: "PUT",
@@ -151,6 +146,7 @@ function NewStock() {
           .then((resp) => resp.json())
           .then((resp) => {
             handleClose();
+            // setFormData({ ...formData, imageUrl: resp.data.url });
             getUsers();
           });
       // } else if (formData.cat === "1") {

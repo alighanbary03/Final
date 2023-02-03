@@ -39,6 +39,9 @@ import StockDet from "./components/StockDet";
 import NewCardMen from "./pages/Category/NewCardMen";
 import NewCard from "./components/NewCard";
 import CatTitle from "./components/CatTitleMen";
+import Single from "./components/SingleCard";
+import SingleCard from "./components/SingleCard";
+import NewSearch from "./pages/NewSearch";
 
 function App() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -71,6 +74,11 @@ function App() {
         <Routing></Routing>
       </div>
       <Footer></Footer>
+
+      {/* <Searchbar></Searchbar> */}
+
+      {/* <NewSearch></NewSearch> */}
+      {/* <SingleCard></SingleCard> */}
       {/* <CatTitle></CatTitle> */}
 
       {/* <Login></Login> */}

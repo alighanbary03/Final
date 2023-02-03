@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   MDBContainer,
   MDBNavbar,
@@ -18,6 +20,7 @@ import {
 
 export default function Navcat() {
   const [showBasic, setShowBasic] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <MDBNavbar expand="lg" light bgColor="light">
@@ -43,47 +46,71 @@ export default function Navcat() {
                 aria-current="page"
                 href="#"
                 style={{ fontFamily: "BNazanin" }}
+                onClick={() => navigate("/fall")}
               >
                 پاییزه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                href="#"
+                onClick={() => navigate("/winter")}
+              >
                 زمستانه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                href="#"
+                onClick={() => navigate("/bahar")}
+              >
                 بهاره
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                href="#"
+                onClick={() => navigate("/women")}
+              >
                 زنانه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                href="#"
+                onClick={() => navigate("/men")}
+              >
                 مردانه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                href="#"
+                onClick={() => navigate("/summer")}
+              >
                 تابستانه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
-                پاییزه
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                onClick={() => navigate("/baby")}
+                href="#"
+              >
                 بچگانه
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink style={{ fontFamily: "BNazanin" }} href="#">
+              <MDBNavbarLink
+                style={{ fontFamily: "BNazanin" }}
+                onClick={() => navigate("/sport")}
+                href="#"
+              >
                 اسپرت
               </MDBNavbarLink>
             </MDBNavbarItem>

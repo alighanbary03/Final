@@ -36,7 +36,8 @@ import CatTitleWi from "../../components/CatTitleWi";
 import NewCardWi from "../Category/NewCardWi";
 import NewCardF from "../Category/NewCardF";
 import NewCardSpo from "../Category/NewCardF";
-import CatTitleSpo from "../../components/CatTitleSpo";
+import CatTitleSpo from "../../components/CatTitleSpor";
+import CatTitleRandom from "../../components/CatTitleRandom";
 
 function Home() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -100,23 +101,24 @@ function Home() {
       <div className="z1">
         <SliderMain></SliderMain>
       </div>
-      <CatTitleMen></CatTitleMen>
-      <NewCardMen></NewCardMen>
-      <CatTitleW></CatTitleW>
-      <NewCardW></NewCardW>
-      <CatTitleB></CatTitleB>
-      <NewCardB></NewCardB>
-      <CatTitleSpi></CatTitleSpi>
-      <NewCardSpi></NewCardSpi>
-      <CatTitleS></CatTitleS>
-      <NewCardS></NewCardS>
-      <CatTitleF></CatTitleF>
-      <NewCardF></NewCardF>
-      <CatTitleWi></CatTitleWi>
-      <NewCardWi></NewCardWi>
-      <CatTitleSpo></CatTitleSpo>
-      <NewCardSpo></NewCardSpo>
+      <CatTitleRandom></CatTitleRandom>
       <Gallery></Gallery>
+
+      <NewCardMen></NewCardMen>
+
+      <NewCardW></NewCardW>
+
+      <NewCardB></NewCardB>
+
+      <NewCardSpi></NewCardSpi>
+
+      <NewCardS></NewCardS>
+
+      <NewCardF></NewCardF>
+
+      <NewCardWi></NewCardWi>
+      {/* <CatTitleSpo></CatTitleSpo> */}
+      {/* <NewCardSpo></NewCardSpo> */}
 
       <div>
         <MainGallery></MainGallery>

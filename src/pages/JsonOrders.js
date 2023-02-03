@@ -294,19 +294,29 @@ function JsonOrders() {
           </div>
         </div>
         {data.length > 0 && (
-          <MDBRow>
+          <MDBRow style={{ marginLeft: "350px" }}>
             <MDBCol size={"8"}>
               <div dir="rtl">
-                <h5 dir="rtl" style={{ marginLeft: "220px" }}>
+                <h5
+                  dir="rtl"
+                  style={{ marginLeft: "220px", fontFamily: "BNazanin" }}
+                >
                   دسته بندی بر اساس
                 </h5>
               </div>
               <select
-                style={{ width: "50%", borderRadius: "25px", height: "35px" }}
+                style={{
+                  width: "50%",
+                  borderRadius: "25px",
+                  height: "35px",
+                  marginLeft: "150px",
+                }}
                 onChange={handleSort}
                 value={sortvalue}
               >
-                <option>لطفا یک مورد را انتخاب کنید</option>
+                <option style={{ fontFamily: "BNazanin" }}>
+                  لطفا یک مورد را انتخاب کنید
+                </option>
                 {sortOptions.map((item, index) => (
                   <option value={item} key={index}>
                     {item}
@@ -315,17 +325,19 @@ function JsonOrders() {
               </select>
             </MDBCol>
             <MDBCol size={"4"}>
-              <h5>فیلتر بر اساس تحویل</h5>
-              <MDBBtnGroup>
+              <h5 style={{ fontFamily: "BNazanin" }}>فیلتر بر اساس تحویل</h5>
+              <MDBBtnGroup style={{ width: "500px" }}>
                 <MDBBtn
                   color="success"
                   onClick={() => handleFilter("تحویل شد")}
+                  style={{ borderRadius: "20px" }}
+                  dir="rtl"
                 >
                   تحویل داده شده
                 </MDBBtn>
                 <MDBBtn
                   color="danger"
-                  style={{ marginLeft: "2px" }}
+                  style={{ marginLeft: "2px", borderRadius: "20px" }}
                   onClick={() => handleFilter("تحویل نشده")}
                 >
                   تحویل داده نشده

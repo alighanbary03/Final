@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import DeleteConfirmation from "../components/shared/DeleteConfirmation";
 import data from "../data/data";
 import "../Style/pages/Single.css";
+import { margin } from "@mui/system";
 
 function Single() {
   const [fruitName, setFruitName] = useState();
@@ -15,6 +16,7 @@ function Single() {
   const [price, setPrice] = useState();
   const [imageUrl, setUrl] = useState();
   const [des, setDes] = useState();
+  const [subcat, setSubcat] = useState();
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -28,6 +30,7 @@ function Single() {
       setUrl(response.data.imageUrl);
       setDes(response.data.des);
       setCat(response.data.cat);
+      setSubcat(response.data.subcat);
       console.log(imageUrl);
       console.log(des);
     });
@@ -81,11 +84,12 @@ function Single() {
                 <a href="#">دسته بندی</a>
               </span>
               <span className="active">{cat}</span>
+              <span className="active">{subcat}</span>
             </div>
 
             <div className="product" dir="rtl">
               <div className="product-title">
-                <h2>{fruitName}</h2>
+                <h2 style={{ fontFamily: "BNazanin" }}>{fruitName}</h2>
               </div>
               {/* <div className="product-rating">
                 <span>
@@ -113,9 +117,16 @@ function Single() {
               </div>
 
               <div dir="rtl" className="product-details">
-                <h3 dir="rtl">توضیحات</h3>
+                <h3 style={{ fontFamily: "BNazanin" }} dir="rtl">
+                  توضیحات
+                </h3>
                 <div classNameName="pr" dir="rtl">
-                  <p dir="rtl">{des}</p>
+                  <h4
+                    style={{ fontFamily: "BNazanin", marginLeft: "150px" }}
+                    dir="rtl"
+                  >
+                    {des}
+                  </h4>
                 </div>
               </div>
               {/* <div className="product-size">

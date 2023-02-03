@@ -3,6 +3,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import NewCard from "./NewCard";
+import SingleCard from "./SingleCard";
 const Gallery = () => {
   const responsive = {
     superLargeDesktop: {
@@ -26,19 +27,31 @@ const Gallery = () => {
   return (
     <Carousel responsive={responsive}>
       <div>
-        <img src="https://images.freeimages.com/images/previews/8bf/collection-02-2007-01-6-1434399.jpg"></img>
+        <SingleCard></SingleCard>
       </div>
       <div>
-        {" "}
-        <img src="https://images.freeimages.com/images/previews/8bf/collection-02-2007-01-6-1434399.jpg"></img>
+        <SingleCard></SingleCard>
       </div>
       <div>
-        {" "}
-        <img src="https://images.freeimages.com/images/previews/8bf/collection-02-2007-01-6-1434399.jpg"></img>
+        <SingleCard></SingleCard>
       </div>
       <div>
-        {" "}
-        <img src="https://images.freeimages.com/images/previews/8bf/collection-02-2007-01-6-1434399.jpg"></img>
+        <SingleCard></SingleCard>
+      </div>
+      <div>
+        <SingleCard></SingleCard>
+      </div>
+      <div>
+        <SingleCard></SingleCard>
+      </div>
+      <div>
+        <SingleCard></SingleCard>
+      </div>
+      <div>
+        <SingleCard></SingleCard>
+      </div>
+      <div>
+        <SingleCard></SingleCard>
       </div>
     </Carousel>
   );
