@@ -21,7 +21,7 @@ function DeleteConfirmation(props) {
               props.hideDeleteModalHandler();
             }}
           >
-            Close
+            بستن
           </Button>
           <Button
             variant="primary"
@@ -29,7 +29,7 @@ function DeleteConfirmation(props) {
               props.confirmDeleteHandler();
             }}
           >
-            Confirm Delete
+            تایید حذف
           </Button>
         </Modal.Footer>
       </Modal>

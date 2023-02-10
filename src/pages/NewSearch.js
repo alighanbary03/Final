@@ -32,6 +32,8 @@ function NewSearch() {
       .catch((err) => console.log(err));
   };
 
+  // console.log(data.length);
+
   useEffect(() => {
     axios.get("http://localhost:3001/users").then((response) => {
       setData(response.data);

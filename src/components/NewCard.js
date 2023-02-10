@@ -16,6 +16,7 @@ function NewCard() {
 
   const id = useSelector((state) => state.ui.menu.id);
   console.log(id);
+
   useEffect(() => {
     axios.get(`http://localhost:5000/fruits/${Number(id)}`).then((response) => {
       setFruitName(response.data.name);

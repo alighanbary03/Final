@@ -12,8 +12,26 @@ import CatTitleF from "../../components/CatTitleF";
 // import NewModal from "./NewModal";
 
 function NewCardF() {
+  const [selected, setSelected] = useState("");
+
+  const handleChange = (event) => {
+    console.log("Label 👉️", event.target.selectedOptions[0].label);
+    console.log(event.target.value);
+    setSelected(event.target.value);
+  };
   const [fruitName, setFruitName] = useState();
   const [url, setUrl] = useState();
+  const [message, setMessage] = useState("");
+
+  const Clothes =
+    (() => {
+      axios
+        .get("http://localhost:3001/users?cat=پاییزه&?subcat=کفش")
+        .then((response) => {
+          setAllFruits(response.data);
+        });
+    },
+    []);
 
   const id = useSelector((state) => state.ui.menu.id);
   console.log(id);
@@ -56,6 +74,17 @@ function NewCardF() {
           body={url}
         /> */}
         <CatTitleF></CatTitleF>
+        <button onClick={Clothes}>لباس</button>
+        <select
+          value={selected}
+          onChange={handleChange}
+          style={{ marginBottom: "100px" }}
+        >
+          <option value="0">انتخاب دسته بندی</option>
+          <option value="لباس" onClick={Clothes}>
+            لباس
+          </option>
+        </select>
         <Row xs={1} md={3} className="g-5">
           {allFruits.map((item) => (
             <>

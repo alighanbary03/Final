@@ -8,6 +8,7 @@ import { Button } from "@material-ui/core";
 import FormDialog from "../components/dialog";
 import axios from "axios";
 import { toast } from "react-toastify";
+import DeleteConfirmation from "../components/shared/DeleteConfirmation";
 import data from "../data/data";
 const initialValue = {
   name: "",
@@ -23,6 +24,8 @@ function NewStock() {
   const [tableData, setTableData] = useState(null);
   const [open, setOpen] = React.useState(false);
   const [formData, setFormData] = useState(initialValue);
+  const [showModal, setShowModal] = useState(false);
+  const [itemToDeleteId, setItemToDeleteId] = useState(0);
   const { id, name, quantity, price, cat, des, imageUrl, subcat } = formData;
 
   const handleClickOpen = () => {
@@ -63,7 +66,7 @@ function NewStock() {
           <Button
             variant="outlined"
             color="secondary"
-            onClick={() => handleDelete(params.value)}
+            onClick={() => openConfirmDeleteModalHandler(params.value)}
             style={{ fontFamily: "BNazanin" }}
           >
             پاک کردن
@@ -123,6 +126,28 @@ function NewStock() {
         .then((resp) => resp.json())
         .then((resp) => getUsers());
     }
+  };
+
+  const confirmDeleteHandler = () => {
+    axios
+      .delete(`http://localhost:3001/users/${itemToDeleteId}`)
+      .then((response) => {
+        setTableData((previousState) => {
+          return previousState.filter((_) => _.id !== itemToDeleteId);
+        });
+        setItemToDeleteId(0);
+        setShowModal(false);
+      });
+  };
+
+  const openConfirmDeleteModalHandler = (id) => {
+    setShowModal(true);
+    setItemToDeleteId(id);
+  };
+
+  const hideDeleteModalHandler = () => {
+    setShowModal(false);
+    setItemToDeleteId(0);
   };
 
   // const onInputChange = (e) => {
@@ -188,44 +213,53 @@ function NewStock() {
     enableRtl: true,
   };
   return (
-    <div className="App">
-      <h1 align="center" style={{ fontFamily: "BNazanin" }}>
-        مدیریت کالا ها
-      </h1>
-      {/* <h3>CRUD Operation with Json-server in ag-Grid</h3> */}
-      <Grid align="right">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClickOpen}
-          style={{
-            marginBottom: "20px",
-            marginRight: "20px",
-            fontFamily: "BNazanin",
-          }}
-        >
-          افزودن کالا
-        </Button>
-      </Grid>
-      <div className="ag-theme-alpine" style={{ height: "400px" }} dir="rtl">
-        <AgGridReact
-          rowData={tableData}
-          columnDefs={columnDefs}
-          defaultColDef={defaultColDef}
-          onGridReady={onGridReady}
-          enableRtl={true}
+    <>
+      <DeleteConfirmation
+        showModal={showModal}
+        hideDeleteModalHandler={hideDeleteModalHandler}
+        title="اطمینان از حذف کالا"
+        body="آیا از حذف کالا اطمینان دارید؟"
+        confirmDeleteHandler={confirmDeleteHandler}
+      ></DeleteConfirmation>
+      <div className="App">
+        <h1 align="center" style={{ fontFamily: "BNazanin" }}>
+          مدیریت کالا ها
+        </h1>
+        {/* <h3>CRUD Operation with Json-server in ag-Grid</h3> */}
+        <Grid align="right">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleClickOpen}
+            style={{
+              marginBottom: "20px",
+              marginRight: "20px",
+              fontFamily: "BNazanin",
+            }}
+          >
+            افزودن کالا
+          </Button>
+        </Grid>
+        <div className="ag-theme-alpine" style={{ height: "400px" }} dir="rtl">
+          <AgGridReact
+            rowData={tableData}
+            columnDefs={columnDefs}
+            defaultColDef={defaultColDef}
+            onGridReady={onGridReady}
+            enableRtl={true}
+          />
+        </div>
+        <FormDialog
+          open={open}
+          handleClose={handleClose}
+          data={formData}
+          // onChange={onChange}
+          handleFormSubmit={handleFormSubmit}
+          onUploadImage={onUploadImage}
+          onInputChange={onInputChange}
         />
       </div>
-      <FormDialog
-        open={open}
-        handleClose={handleClose}
-        data={formData}
-        // onChange={onChange}
-        handleFormSubmit={handleFormSubmit}
-        onUploadImage={onUploadImage}
-        onInputChange={onInputChange}
-      />
-    </div>
+    </>
   );
 }
 

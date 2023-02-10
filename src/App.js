@@ -42,6 +42,13 @@ import CatTitle from "./components/CatTitleMen";
 import Single from "./components/SingleCard";
 import SingleCard from "./components/SingleCard";
 import NewSearch from "./pages/NewSearch";
+import Cartlist from "./pages/Cartlist";
+import Checkoutform from "./pages/Checkoutform";
+import Payment from "./components/Payment";
+import Sucess from "./components/Sucess";
+import Unsucess from "./components/Unsucess";
+import Basic from "./components/ordermodal";
+import CustomizedBadges from "./components/CartlistBadge";
 
 function App() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -75,6 +82,18 @@ function App() {
       </div>
       <Footer></Footer>
 
+      {/* <CustomizedBadges></CustomizedBadges> */}
+
+      {/* <Unsucess></Unsucess> */}
+
+      {/* <Sucess></Sucess> */}
+
+      {/* <Payment></Payment> */}
+
+      {/* <Checkoutform></Checkoutform> */}
+      {/* 
+      <Cartlist></Cartlist> */}
+
       {/* <Searchbar></Searchbar> */}
 
       {/* <NewSearch></NewSearch> */}
@@ -84,7 +103,7 @@ function App() {
       {/* <Login></Login> */}
       {/* <Searchbar></Searchbar> */}
       {/* <NewCard></NewCard> */}
-
+      {/* <Basic></Basic> */}
       {/* <StockDet></StockDet> */}
       {/* <NewCardMen></NewCardMen> */}
       {/* <NewStock></NewStock> */}

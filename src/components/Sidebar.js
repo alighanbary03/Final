@@ -32,7 +32,7 @@ export default (props) => {
       <NavLink to="/login" className="menu-item">
         ورود
       </NavLink>
-      <NavLink to="/cardlist" className="menu-item">
+      <NavLink to="/cartlist" className="menu-item">
         سبد خرید
       </NavLink>
       <NavLink to="/admin" className="menu-item">

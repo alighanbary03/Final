@@ -23,25 +23,45 @@ export const Cardlist = ({
   }
 
   return (
-    <div className="card-list">
-      <div className="list-card-chooiced">
-        <div className="img">
-          <img
-            src={url}
-            style={{ width: "50px", marginRight: "20px" }}
-            alt=""
-          />
-        </div>
-        <div className="detail">
-          <p>{description}</p>
-          <div className="count">
-            <p>
-              تومان هزار{price} x {count}
-            </p>
-            <button onClick={remove}>remove</button>
+    <>
+      <table className="styled-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dom</td>
+            <td>6000</td>
+          </tr>
+          <tr className="active-row">
+            <td>Melissa</td>
+            <td>5150</td>
+          </tr>
+        </tbody>
+      </table>
+      <div classNameName="card-list">
+        <div classNameName="list-card-chooiced">
+          <div classNameName="img">
+            <img
+              src={url}
+              style={{ width: "50px", marginRight: "20px" }}
+              alt=""
+            />
+          </div>
+          <div classNameName="detail">
+            <p>{description}</p>
+            <div classNameName="count">
+              <p>
+                تومان هزار{price} x {count}
+              </p>
+              <button onClick={remove}>remove</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

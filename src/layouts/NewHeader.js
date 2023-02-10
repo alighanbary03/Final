@@ -13,6 +13,7 @@ import AppBar from "@mui/material/AppBar";
 import "../Style/layouts/NewHeader.css";
 import MainSidebar from "../components/MainSidebar";
 import { borderRadius } from "@mui/system";
+import CustomizedBadges from "../components/CartlistBadge";
 
 function NewHeader() {
   const navigate = useNavigate();
@@ -35,9 +36,17 @@ function NewHeader() {
                 style={{ fontSize: "30px", color: "black", cursor: "pointer" }}
                 onClick={() => navigate("/login")}
               />
-              <AiOutlineShopping style={{ fontSize: "30px", color: "black" }} />
+              <div onClick={() => navigate("/cartlist")}>
+                <CustomizedBadges />
+              </div>
+
               <AiOutlineSearch
-                style={{ fontSize: "30px", color: "black", cursor: "pointer" }}
+                style={{
+                  fontSize: "30px",
+                  color: "black",
+                  cursor: "pointer",
+                  marginLeft: "10px",
+                }}
                 onClick={() => navigate("/search")}
               />
             </div>

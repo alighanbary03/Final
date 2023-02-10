@@ -1,7 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 function CatTitleSpi() {
+  const navigate = useNavigate();
   return (
     <div className="row py-5">
       <div className="col-lg-12 mx-auto">
@@ -10,6 +12,7 @@ function CatTitleSpi() {
             className="display-4 right top"
             dir="rtl"
             style={{ fontFamily: "BNazanin" }}
+            onClick={() => navigate(`/bahar`)}
           >
             از کالکشن بهاره ما دیدن کنید
           </h1>

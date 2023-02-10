@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { modalAction } from "../store/modalslice";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import NewModal from "../components/NewModal";
+
 import {
   MDBTable,
   MDBTableBody,
@@ -24,7 +30,43 @@ function JsonOrders() {
   const [sortFilterValue, setSortFilterValue] = useState("");
   const [operation, setOperation] = useState("");
 
-  const sortOptions = ["name", "address", "email", "phone", "status"];
+  const [fruitName, setFruitName] = useState();
+  const [url, setUrl] = useState();
+  const [address, setAddress] = useState();
+  const [phone, setPhone] = useState();
+  const [orderDate, setOrderDate] = useState();
+  const [currentDate, setCurrentDate] = useState();
+  const [orders, setOrders] = useState();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const sortOptions = ["name", "address", "date", "phone", "status"];
+
+  const id = useSelector((state) => state.ui.menu.id);
+  console.log(id);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3001/customers/${Number(id)}`)
+      .then((response) => {
+        setFruitName(response.data.name);
+        setUrl(response.data.lastname);
+        setAddress(response.data.address);
+        setPhone(response.data.phone);
+        setOrderDate(response.data.orderDate);
+        setCurrentDate(response.data.currentDate);
+        setOrders(response.data.orders);
+      });
+  }, [id]);
+  const showModal = useSelector((state) => state.ui.menu.show);
+
+  const openConfirmDeleteModalHandler = (id) => {
+    dispatch(modalAction.showMenu(id));
+    // setShowModal(true);
+  };
+
+  const hideDeleteModalHandler = () => {
+    dispatch(modalAction.hideMenu());
+  };
 
   useEffect(() => {
     loadUsersData(0, 4, 0);
@@ -43,7 +85,7 @@ function JsonOrders() {
         setSortValue("");
         return await axios
           .get(
-            `http://localhost:2000/users?q=${value}&_start=${start}=&_end=${end}`
+            `http://localhost:3001/customers?q=${value}&_start=${start}=&_end=${end}`
           )
           .then((response) => {
             setData(response.data);
@@ -55,7 +97,7 @@ function JsonOrders() {
         setSortFilterValue(filterOrSortValue);
         return await axios
           .get(
-            `http://localhost:2000/users?_sort=${filterOrSortValue}&_order=asc&_start=${start}&_end=${end}`
+            `http://localhost:3001/customers?_sort=${filterOrSortValue}&_order=asc&_start=${start}&_end=${end}`
           )
           .then((response) => {
             setData(response.data);
@@ -67,7 +109,7 @@ function JsonOrders() {
         setSortFilterValue(filterOrSortValue);
         return await axios
           .get(
-            `http://localhost:2000/users?status=${filterOrSortValue}&_order=asc&_start=${start}&_end=${end}`
+            `http://localhost:3001/customers?status=${filterOrSortValue}&_order=asc&_start=${start}&_end=${end}`
           )
           .then((response) => {
             setData(response.data);
@@ -77,7 +119,7 @@ function JsonOrders() {
 
       default:
         return await axios
-          .get(`http://localhost:2000/users?_start=${start}=&_end=${end}`)
+          .get(`http://localhost:3001/customers?_start=${start}=&_end=${end}`)
           .then((response) => {
             setData(response.data);
             setCurrentPage(currentPage + increase);
@@ -212,6 +254,16 @@ function JsonOrders() {
   };
   return (
     <>
+      <NewModal
+        showModal={showModal}
+        hideDeleteModalHandler={hideDeleteModalHandler}
+        title={fruitName}
+        body={url}
+        address={address}
+        phone={phone}
+        orderDate={orderDate}
+        currentDate={currentDate}
+      />
       <h2 className="text-center" style={{ fontFamily: "BNazanin" }}>
         مدیریت سفارشات
       </h2>
@@ -251,9 +303,8 @@ function JsonOrders() {
                   <tr>
                     <th scope="col">شماره</th>
                     <th scope="col">نام</th>
-                    <th scope="col">ایمیل</th>
-                    <th scope="col">شماره تلفن</th>
-                    <th scope="col">آدرس</th>
+                    <th scope="col">مجموعه مبلغ</th>
+                    <th scope="col"> زمان ثبت سفارش</th>
                     <th scope="col">وضعیت</th>
                   </tr>
                 </MDBTableHead>
@@ -270,11 +321,20 @@ function JsonOrders() {
                     <MDBTableBody key={index}>
                       <tr>
                         <th scope="row">{index + 1}</th>
-                        <td>{item.name}</td>
-                        <td>{item.email}</td>
-                        <td>{item.phone}</td>
-                        <td>{item.address}</td>
-                        <td>{item.status}</td>
+                        <td>
+                          {item.name}:{item.lastname}
+                        </td>
+                        <td>{item.total}</td>
+                        <td>{item.currentDate}</td>
+                        <td>
+                          <button
+                            onClick={() => {
+                              openConfirmDeleteModalHandler(item.id);
+                            }}
+                          >
+                            بررسی سفارش{" "}
+                          </button>
+                        </td>
                       </tr>
                     </MDBTableBody>
                   ))
@@ -329,7 +389,7 @@ function JsonOrders() {
               <MDBBtnGroup style={{ width: "500px" }}>
                 <MDBBtn
                   color="success"
-                  onClick={() => handleFilter("تحویل شد")}
+                  onClick={() => handleFilter(true)}
                   style={{ borderRadius: "20px" }}
                   dir="rtl"
                 >
@@ -338,7 +398,7 @@ function JsonOrders() {
                 <MDBBtn
                   color="danger"
                   style={{ marginLeft: "2px", borderRadius: "20px" }}
-                  onClick={() => handleFilter("تحویل نشده")}
+                  onClick={() => handleFilter(false)}
                 >
                   تحویل داده نشده
                 </MDBBtn>
