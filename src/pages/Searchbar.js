@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import TextField from "@mui/material/TextField";
-import List from "../components/List";
+// import List from "../components/List";
 import "../App.css";
 import FinalPagination from "./FinalPagination/FinalPagination";
 function Searchbar() {
@@ -25,8 +25,8 @@ function Searchbar() {
           />
         </div>
       </div>
-
-      <List input={inputText} />
+      {/* 
+      <List input={inputText} /> */}
     </>
   );
 }

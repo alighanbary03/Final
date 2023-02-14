@@ -17,6 +17,7 @@ function Checkoutform() {
   // const [orderDate, setOrderDate] = useState();
   const total = useRef("");
   const status = useRef(false);
+  const [orders, setOrders] = useState([]);
 
   const [ptotal, setPtotal] = useState("");
 
@@ -52,6 +53,12 @@ function Checkoutform() {
 
   // const currentDate = getDate();
 
+  useEffect(() => {
+    axios.get("http://localhost:3001/Cartlist").then((response) => {
+      setOrders(response.data);
+    });
+  }, []);
+
   const addFruitHandler = () => {
     var payload = {
       name: fruitName.current.value,
@@ -61,13 +68,21 @@ function Checkoutform() {
       orderDate: orderDate.current.value,
       currentDate: currentDate,
       status: status.current,
+      orders: orders,
       total: total.current.value,
     };
 
     axios.post("http://localhost:3001/customers", payload).then(() => {
+      addToCart();
       navigate("/Payment");
     });
     console.log(date.toLocaleDateString("fa-IR"));
+  };
+
+  const addToCart = (id) => {
+    axios.patch(`http://localhost:3001/customers/${+id}`, {
+      orders: orders,
+    });
   };
 
   return (

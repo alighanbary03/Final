@@ -57,7 +57,7 @@ export default function MainSidebar() {
           >
             <MDBBtn block className="border-bottom m-0" color="link">
               <NavLink
-                to="/home"
+                to="/"
                 className="menu-item"
                 dir="rtl"
                 style={{ fontFamily: "BNazanin" }}

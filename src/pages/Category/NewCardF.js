@@ -9,6 +9,7 @@ import "../../Style/components/NewCard.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CatTitleF from "../../components/CatTitleF";
+import { display } from "@mui/system";
 // import NewModal from "./NewModal";
 
 function NewCardF() {
@@ -23,15 +24,21 @@ function NewCardF() {
   const [url, setUrl] = useState();
   const [message, setMessage] = useState("");
 
-  const Clothes =
-    (() => {
-      axios
-        .get("http://localhost:3001/users?cat=پاییزه&?subcat=کفش")
-        .then((response) => {
-          setAllFruits(response.data);
-        });
-    },
-    []);
+  const handleFilter = async (value) => {
+    return await axios
+      .get(`http://localhost:3001/users?subcat=${value}&cat=پاییزه`)
+      .then((response) => {
+        setAllFruits(response.data);
+      });
+  };
+
+  const handleRefresh = async () => {
+    return await axios
+      .get(`http://localhost:3001/users?cat=پاییزه`)
+      .then((response) => {
+        setAllFruits(response.data);
+      });
+  };
 
   const id = useSelector((state) => state.ui.menu.id);
   console.log(id);
@@ -74,17 +81,70 @@ function NewCardF() {
           body={url}
         /> */}
         <CatTitleF></CatTitleF>
-        <button onClick={Clothes}>لباس</button>
-        <select
+        <div
+          style={{
+            marginBottom: "50px",
+            marginRight: "50px",
+            display: "flex",
+            gap: "20px",
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("کفش")}
+          >
+            کفش
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("لباس")}
+          >
+            لباس
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              width: "70px",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("اکسسوری")}
+          >
+            اکسسوری
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleRefresh()}
+          >
+            همه
+          </button>
+        </div>
+        {/* <select
           value={selected}
           onChange={handleChange}
           style={{ marginBottom: "100px" }}
         >
           <option value="0">انتخاب دسته بندی</option>
-          <option value="لباس" onClick={Clothes}>
+          <option value="لباس" onClick={() => handleFilter("کفش")}>
             لباس
           </option>
-        </select>
+        </select> */}
         <Row xs={1} md={3} className="g-5">
           {allFruits.map((item) => (
             <>

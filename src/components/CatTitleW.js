@@ -1,7 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 function CatTitleW() {
+  const navigate = useNavigate();
   return (
     <div className="row py-5">
       <div className="col-lg-12 mx-auto">
@@ -9,7 +11,8 @@ function CatTitleW() {
           <h1
             className="display-4 right top"
             dir="rtl"
-            style={{ fontFamily: "BNazanin" }}
+            style={{ fontFamily: "BNazanin", cursor: "pointer" }}
+            onClick={() => navigate(`/women`)}
           >
             از کالکشن زنانه ما دیدن کنید
           </h1>

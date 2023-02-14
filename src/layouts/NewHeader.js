@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "../components/Navbar";
 import Navcat from "../components/NavCat";
 import logo from "../assets/images/logo-img-01.svg";
+import logo2 from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import {
   AiOutlineUser,
@@ -20,17 +21,11 @@ function NewHeader() {
   return (
     <>
       <header>
-        <div className="px-3 py-2 border-bottom mb-3">
+        <div
+          className="px-3 py-2 border-bottom mb-3"
+          style={{ marginLeft: "300px" }}
+        >
           <div className="container d-flex flex-wrap justify-content-center">
-            <form className="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto ">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="جست و جو"
-                aria-label="Search"
-              />
-            </form>
-
             <div className="logini">
               <AiOutlineUser
                 style={{ fontSize: "30px", color: "black", cursor: "pointer" }}
@@ -39,7 +34,7 @@ function NewHeader() {
               <div onClick={() => navigate("/cartlist")}>
                 <CustomizedBadges />
               </div>
-
+              {/* 
               <AiOutlineSearch
                 style={{
                   fontSize: "30px",
@@ -48,19 +43,34 @@ function NewHeader() {
                   marginLeft: "10px",
                 }}
                 onClick={() => navigate("/search")}
-              />
+              /> */}
             </div>
             <div className="title">
-              <h1 style={{ fontFamily: "BNazanin" }}>لاکچری لند</h1>
-              <img className="brand" src={logo}></img>
+              <img
+                className="brand"
+                style={{ borderRadius: "50px" }}
+                src={logo2}
+              ></img>
+              {/* <h1 style={{ fontFamily: "BNazanin" }}>لاکچری لند</h1> */}
+              {/* <img className="brand" src={logo}></img> */}
             </div>
             <div className="text-end">
-              <button type="button" className="btn btn-light text-dark me-2">
+              <AiOutlineSearch
+                style={{
+                  fontSize: "30px",
+                  color: "black",
+                  cursor: "pointer",
+                  marginLeft: "10px",
+                  marginTop: "20px",
+                }}
+                onClick={() => navigate("/search")}
+              />
+              {/* <button type="button" className="btn btn-light text-dark me-2">
                 ورود
               </button>
               <button type="button" className="btn btn-primary">
                 ثبت نام
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

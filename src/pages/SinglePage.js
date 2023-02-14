@@ -84,6 +84,19 @@ function Single() {
     window.location.reload();
   };
 
+  // const addToCart = () => {
+  //   var payload = {
+  //     name: fruitName,
+  //     price: price ? Number(price) : 0,
+  //     url: imageUrl,
+  //     order: counter,
+  //   };
+  //   axios.post("http://localhost:3001/Cartlist", payload).then(() => {});
+  //   toast.success("سبد خرید خود را چک کنید", {
+  //     position: toast.POSITION.TOP_RIGHT,
+  //   });
+  //   window.location.reload();
+  // };
   const openConfirmDeleteModalHandler = (id) => {
     setShowModal(true);
     setItemToDeleteId(id);

@@ -1,6 +1,8 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 import "../App.css";
+import IMG1 from "../assets/images/100-Most-Inspirational-Fashion-Quotes-Ever-18.jpg";
+import IMG2 from "../assets/images/220125-amazon-fashion-finds-vl-2x1.webp";
 
 export default function () {
   return (
@@ -8,14 +10,14 @@ export default function () {
       <MDBCarouselItem
         className="w-100 d-block Slide"
         itemId={1}
-        src="https://images.unsplash.com/photo-1529720317453-c8da503f2051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        src={IMG1}
         alt="..."
       ></MDBCarouselItem>
 
       <MDBCarouselItem
         className="w-100 d-block Slide"
         itemId={2}
-        src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        src={IMG2}
         alt="..."
       ></MDBCarouselItem>
 

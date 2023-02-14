@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import Pagination from "../../components/Pagination";
 import data from "../../data/ListData.json";
 import "../../Style/FinalPagination.css";
-import { Card } from "../../components/Card";
+// import { Card } from "../../components/Card";
 
 let PageSize = 10;
 
@@ -18,7 +18,7 @@ export default function FinalPagination() {
   return (
     <>
       <table>
-        <tbody>
+        {/* <tbody>
           {currentTableData.map((item) => {
             return (
               <Card
@@ -32,7 +32,7 @@ export default function FinalPagination() {
               </Card>
             );
           })}
-        </tbody>
+        </tbody> */}
       </table>
       <Pagination
         className="pagination-bar"

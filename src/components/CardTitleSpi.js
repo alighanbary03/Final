@@ -11,7 +11,7 @@ function CatTitleSpi() {
           <h1
             className="display-4 right top"
             dir="rtl"
-            style={{ fontFamily: "BNazanin" }}
+            style={{ fontFamily: "BNazanin", cursor: "pointer" }}
             onClick={() => navigate(`/bahar`)}
           >
             از کالکشن بهاره ما دیدن کنید

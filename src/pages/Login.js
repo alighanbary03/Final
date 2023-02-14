@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 // import "../assets/Login/css/util.css";
 // import "../assets/Login/css/main.css";
 import "../Style/pages/Login.css";
-import bg from "../assets/Login/images/bg-01.jpg";
+// import bg from "../assets/Login/images/bg-01.jpg";
 import LoginTitel from "../components/LoginTitel";
 function Login() {
   const navigate = useNavigate();
@@ -68,8 +68,20 @@ function Login() {
                   />
                 </div>
                 <button type="submit" className="button login__submit">
-                  <span className="button__text">ورود</span>
-                  <i className="button__icon fas fa-chevron-right"></i>
+                  <div style={{ position: "absolute", left: "50px" }}>
+                    <span
+                      className="button__text"
+                      style={{
+                        position: "absolute",
+                        top: "2px",
+                        left: "20px",
+                        fontFamily: "BNazanin",
+                      }}
+                    >
+                      ورود
+                    </span>
+                    <i className="button__icon fas fa-chevron-right"></i>
+                  </div>
                 </button>
                 {flag && (
                   <Alert color="primary" variant="warning">

@@ -54,3 +54,7 @@ h1 {
 .z {
   z-index: 2;
 }
+
+header {
+  background: linear-gradient(90deg, #c7c5f4, #6e87b6);
+}

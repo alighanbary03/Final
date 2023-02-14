@@ -1,22 +1,22 @@
 import React from "react";
 import Header from "../../layouts/header/Header";
-import Example from "../../components/ImgSlide";
+// import Example from "../../components/ImgSlide";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Carousel } from "@trendyol-js/react-carousel";
-import { Card } from "../../components/Card";
+// import { Card } from "../../components/Card";
 import { useState, useEffect } from "react";
 import data from "../../data/data";
 import Grid from "../../components/Gridi.js";
 import Routing from "../../Routers/Routing";
 import { Modals } from "../../components/Modals";
 import { Menubar } from "../../components/Menubar";
-import { Cardlist } from "../../components/Cardlist";
+// import { Cardlist } from "../../components/Cardlist";
 import { Pay } from "../../components/Pay";
-import { Form } from "../../components/Form";
-import { Mainform } from "../../components/MainForm";
+// import { Form } from "../../components/Form";
+// import { Mainform } from "../../components/MainForm";
 
 import "../../App.css";
-import CarouselFadeExample from "../../components/ImgSlide";
+// import CarouselFadeExample from "../../components/ImgSlide";
 import MainGallery from "../../components/MainGallery";
 import SliderMain from "../../components/SliderM";
 import Gallery from "../../components/Gallery";
@@ -35,7 +35,7 @@ import CatTitleF from "../../components/CatTitleF";
 import CatTitleWi from "../../components/CatTitleWi";
 import NewCardWi from "../Category/NewCardWi";
 import NewCardF from "../Category/NewCardF";
-import NewCardSpo from "../Category/NewCardF";
+import NewCardSpo from "../Category/NewCardSpo";
 import CatTitleSpo from "../../components/CatTitleSpor";
 import CatTitleRandom from "../../components/CatTitleRandom";
 
@@ -118,7 +118,7 @@ function Home() {
 
       <NewCardWi></NewCardWi>
       {/* <CatTitleSpo></CatTitleSpo> */}
-      {/* <NewCardSpo></NewCardSpo> */}
+      <NewCardSpo></NewCardSpo>
 
       <div>
         <MainGallery></MainGallery>

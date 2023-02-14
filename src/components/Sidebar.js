@@ -14,7 +14,7 @@ import "../Style/Sidebar.css";
 export default (props) => {
   return (
     <Menu>
-      <NavLink to="/home" className="menu-item">
+      <NavLink to="/" className="menu-item">
         Home
       </NavLink>
       <NavLink to="/category" className="menu-item">

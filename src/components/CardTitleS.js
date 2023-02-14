@@ -11,7 +11,7 @@ function CatTitleS() {
           <h1
             className="display-4 right top"
             dir="rtl"
-            style={{ fontFamily: "BNazanin", curser: "pointer" }}
+            style={{ fontFamily: "BNazanin", cursor: "pointer" }}
             onClick={() => navigate(`/summer`)}
           >
             از کالکشن تابستانه ما دیدن کنید

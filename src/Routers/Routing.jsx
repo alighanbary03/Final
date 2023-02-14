@@ -36,7 +36,7 @@ import UpdateStatus from "../components/UpdateStatus";
 function Routing() {
   return (
     <Routes>
-      <Route exact path="/home/*" element={<Home />} />
+      <Route exact path="/" element={<Home />} />
       <Route exact path="/category" element={<Category />} />
       <Route exact path="/search" element={<NewSearch />} />
       <Route exact path="/all" element={<FinalPagination />} />

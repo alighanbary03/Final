@@ -78,13 +78,13 @@ function CartlistTable() {
           title={fruitName}
           body={url}
         /> */}
-        <DeleteConfirmation
+        {/* <DeleteConfirmation
           showModal={showModal}
           hideDeleteModalHandler={hideDeleteModalHandler}
           title="Delete Confirmation"
           body="Are you want delete this itme?"
           confirmDeleteHandler={confirmDeleteHandler}
-        ></DeleteConfirmation>
+        ></DeleteConfirmation> */}
         {/* <h1>{total}</h1> */}
         <table className="styled-table">
           <thead>
@@ -167,13 +167,13 @@ function CartlistTable() {
                       {item.order * item.price}
                     </th>
                     <th>
-                      <button
+                      {/* <button
                         onClick={() => {
                           openConfirmDeleteModalHandler(item.id);
                         }}
                       >
                         حذف
-                      </button>
+                      </button> */}
                     </th>
                   </tr>
                 </thead>

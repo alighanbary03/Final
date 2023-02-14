@@ -36,7 +36,7 @@ function JsonOrders() {
   const [phone, setPhone] = useState();
   const [orderDate, setOrderDate] = useState();
   const [currentDate, setCurrentDate] = useState();
-  const [orders, setOrders] = useState();
+  const [orders, setOrders] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -263,6 +263,7 @@ function JsonOrders() {
         phone={phone}
         orderDate={orderDate}
         currentDate={currentDate}
+        orders={orders}
       />
       <h2 className="text-center" style={{ fontFamily: "BNazanin" }}>
         مدیریت سفارشات

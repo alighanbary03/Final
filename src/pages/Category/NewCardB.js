@@ -15,6 +15,22 @@ function NewCardB() {
   const [fruitName, setFruitName] = useState();
   const [url, setUrl] = useState();
 
+  const handleFilter = async (value) => {
+    return await axios
+      .get(`http://localhost:3001/users?subcat=${value}&cat=بچگانه`)
+      .then((response) => {
+        setAllFruits(response.data);
+      });
+  };
+
+  const handleRefresh = async () => {
+    return await axios
+      .get(`http://localhost:3001/users?cat=بچگانه`)
+      .then((response) => {
+        setAllFruits(response.data);
+      });
+  };
+
   const id = useSelector((state) => state.ui.menu.id);
   console.log(id);
   useEffect(() => {
@@ -56,6 +72,61 @@ function NewCardB() {
           body={url}
         /> */}
         <CatTitleB></CatTitleB>
+
+        <div
+          style={{
+            marginBottom: "50px",
+            marginRight: "50px",
+            display: "flex",
+            gap: "20px",
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("کفش")}
+          >
+            کفش
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("لباس")}
+          >
+            لباس
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              width: "70px",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleFilter("اکسسوری")}
+          >
+            اکسسوری
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              borderRadius: "5px",
+              color: "white",
+              fontFamily: "BNazanin",
+            }}
+            onClick={() => handleRefresh()}
+          >
+            همه
+          </button>
+        </div>
         <Row xs={1} md={3} className="g-5">
           {allFruits.map((item) => (
             <>

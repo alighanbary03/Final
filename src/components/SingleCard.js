@@ -25,7 +25,7 @@ function SingleCard() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/users/${Math.ceil(Math.random() * 20)}`)
+      .get(`http://localhost:3001/users/${Math.ceil(Math.random() * 19)}`)
       .then((response) => {
         setFruitName(response.data.name);
         setPrice(response.data.price);
