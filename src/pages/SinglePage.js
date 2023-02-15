@@ -194,7 +194,15 @@ function Single() {
                 </div>
 
                 <div dir="rtl" className="product-details">
-                  <h3 style={{ fontFamily: "BNazanin" }} dir="rtl">
+                  <h3
+                    style={{
+                      fontFamily: "BNazanin",
+                      marginLeft: "400px",
+                      fontWeight: "bold",
+                      fontSize: "20px",
+                    }}
+                    dir="rtl"
+                  >
                     توضیحات
                   </h3>
                   <div classNameName="pr" dir="rtl">

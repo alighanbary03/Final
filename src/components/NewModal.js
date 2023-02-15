@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cartlist from "../pages/CartlistTable";
+import "../Style/components/NewModal.css";
 
 import CartlistTable from "../pages/CartlistTable";
 
@@ -16,7 +17,20 @@ function NewModal(props) {
   const [phone, setPhone] = useState();
   const [orderDate, setOrderDate] = useState();
   const [orders, setOrders] = useState([]);
+  const [status, setStatus] = useState(Boolean);
   const navigate = useNavigate();
+
+  const [hideLightbox, setHideLightbox] = useState(true);
+
+  const [hidden, setHidden] = useState();
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:3001/customers/${Number(id)}`)
+  //     .then((response) => {
+  //       setStatus(response.data.status)
+  //     });
+  // }, [id]);
 
   // const [username, setUserName] = useState();
 
@@ -34,6 +48,21 @@ function NewModal(props) {
 
   // const [createAt, setCreateAt] = useState();
 
+  const getDate = () => {
+    let today = new Date();
+    let dd = String(today.getDate());
+    let mm = String(today.getMonth());
+    let yyyy = today.getFullYear();
+
+    // today = mm + "/" + dd + "/" + yyyy;
+    today = today.toLocaleDateString("fa-IR");
+    console.log(today);
+
+    return today;
+  };
+
+  const [currentDate, setCurrentDate] = useState(getDate);
+
   const id = useSelector((state) => state.ui.menu.id);
   useEffect(() => {
     axios.get(`http://localhost:3001/customers?id=${id}`).then((response) => {
@@ -43,6 +72,7 @@ function NewModal(props) {
       setPhone(response.data.phone);
       setOrderDate(response.data.orderDate);
       setOrders(response.data.orders);
+      setStatus(response.data.status);
     });
   }, [id]);
 
@@ -60,9 +90,12 @@ function NewModal(props) {
     axios.patch(`http://localhost:3001/customers/${+id}`, {
       status: true,
     });
-    alert("بسته تحویل داده شد").then((res) => {
-      // setOrderData(res.data);
-    });
+
+    setHidden(true);
+    getDate();
+
+    alert("بسته تحویل داده شد");
+    // setOrderData(res.data);
   };
 
   // const addToCart = (id) => {
@@ -96,18 +129,41 @@ function NewModal(props) {
             </Modal.Title>
           </div>
         </Modal.Header>
-        <div dir="rtl" style={{ marginTop: "20px", marginLeft: "100px" }}>
+        <div dir="rtl" style={{ marginTop: "20px", marginLeft: "200px" }}>
           <Modal.Body style={{ fontFamily: "BNazanin" }}>
-            <h2 style={{ marginTop: "20px", fontFamily: "BNazanin" }}>
+            <h2
+              style={{
+                marginTop: "20px",
+                fontFamily: "BNazanin",
+                marginLeft: "200px",
+              }}
+            >
               آدرس:{props.address}
             </h2>
-            <h2 style={{ marginTop: "20px", fontFamily: "BNazanin" }}>
+            <h2
+              style={{
+                marginTop: "20px",
+                fontFamily: "BNazanin",
+                marginLeft: "200px",
+              }}
+            >
               تلفن:{props.phone}
             </h2>
-            <h2 style={{ marginTop: "20px", fontFamily: "BNazanin" }}>
+            <h2
+              style={{
+                marginTop: "20px",
+                fontFamily: "BNazanin",
+                marginLeft: "145px",
+              }}
+            >
               زمان تحویل:{props.orderDate}
             </h2>
-            <h2 style={{ marginTop: "20px", fontFamily: "BNazanin" }}>
+            <h2
+              style={{
+                marginTop: "20px",
+                fontFamily: "BNazanin",
+              }}
+            >
               زمان سفارش:{props.currentDate}
             </h2>
           </Modal.Body>
@@ -218,9 +274,24 @@ function NewModal(props) {
           >
             بستن
           </Button>
-          <Button variant="primary" onClick={() => Status(id)}>
-            تحویل شد
-          </Button>
+          {props.status === false && !hidden ? (
+            <Button variant="primary" onClick={() => Status(id)}>
+              تحویل شد
+            </Button>
+          ) : (
+            <div
+              style={{
+                marginRight: "150px",
+                padding: "20px",
+                fontFamily: "BNazanin",
+                fontWeight: "bold",
+                fontSize: "20px",
+              }}
+            >
+              {" "}
+              تاریخ تحویل:{currentDate}
+            </div>
+          )}
         </Modal.Footer>
       </Modal>
     </div>

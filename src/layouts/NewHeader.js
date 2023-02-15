@@ -48,7 +48,7 @@ function NewHeader() {
             <div className="title">
               <img
                 className="brand"
-                style={{ borderRadius: "50px" }}
+                style={{ borderRadius: "50px", height: "200px" }}
                 src={logo2}
               ></img>
               {/* <h1 style={{ fontFamily: "BNazanin" }}>لاکچری لند</h1> */}

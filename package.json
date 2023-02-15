@@ -24,6 +24,7 @@
     "bootstrap": "^5.2.3",
     "bourbon": "^7.3.0",
     "html2canvas": "^1.4.1",
+    "mantine-datepicker-jalali": "^1.2.3",
     "material-table": "^2.0.3",
     "mdb-react-ui-kit": "^5.1.0",
     "mdbreact": "^5.2.0",

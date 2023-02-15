@@ -235,6 +235,7 @@ function NewStock() {
               marginBottom: "20px",
               marginRight: "20px",
               fontFamily: "BNazanin",
+              width: "200px",
             }}
           >
             افزودن کالا
