@@ -89,12 +89,17 @@ function NewModal(props) {
   const Status = (id) => {
     axios.patch(`http://localhost:3001/customers/${+id}`, {
       status: true,
+      finalDate: currentDate,
     });
 
     setHidden(true);
     getDate();
 
     alert("بسته تحویل داده شد");
+
+    props.hideDeleteModalHandler();
+
+    window.location.reload();
     // setOrderData(res.data);
   };
 
@@ -153,7 +158,7 @@ function NewModal(props) {
               style={{
                 marginTop: "20px",
                 fontFamily: "BNazanin",
-                marginLeft: "145px",
+                marginLeft: "-20px",
               }}
             >
               زمان تحویل:{props.orderDate}
@@ -274,11 +279,7 @@ function NewModal(props) {
           >
             بستن
           </Button>
-          {props.status === false && !hidden ? (
-            <Button variant="primary" onClick={() => Status(id)}>
-              تحویل شد
-            </Button>
-          ) : (
+          {props.status === true && !hidden ? (
             <div
               style={{
                 marginRight: "150px",
@@ -289,8 +290,12 @@ function NewModal(props) {
               }}
             >
               {" "}
-              تاریخ تحویل:{currentDate}
+              تاریخ تحویل:{props.finalDate}
             </div>
+          ) : (
+            <Button variant="primary" onClick={() => Status(id)}>
+              تحویل شد
+            </Button>
           )}
         </Modal.Footer>
       </Modal>

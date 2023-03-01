@@ -9,6 +9,7 @@ import FormDialog from "../components/dialog";
 import axios from "axios";
 import { toast } from "react-toastify";
 import DeleteConfirmation from "../components/shared/DeleteConfirmation";
+import ImageRenderer from "../components/ImageRenderer";
 import data from "../data/data";
 const initialValue = {
   name: "",
@@ -46,10 +47,17 @@ function NewStock() {
   // const url2 = `http://localhost:3001/users/men`;
 
   const columnDefs = [
+    {
+      headerName: "عکس",
+      field: "imageUrl",
+      cellRenderer: ImageRenderer,
+      flex: 1,
+    },
     { headerName: "شماره", field: "id" },
     { headerName: "نام محصول", field: "name" },
     { headerName: "تعداد ", field: "quantity" },
     { headerName: "دسته بندی", field: "cat" },
+
     // { headerName: "Date of Birth", field: "dob" },
     {
       headerName: "عملیات",
@@ -248,6 +256,7 @@ function NewStock() {
             defaultColDef={defaultColDef}
             onGridReady={onGridReady}
             enableRtl={true}
+            rowHeight={200}
           />
         </div>
         <FormDialog

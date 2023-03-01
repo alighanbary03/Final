@@ -28,7 +28,7 @@ import MainGallery from "./components/MainGallery";
 import MainSidebar from "./components/MainSidebar";
 import SliderMain from "./components/SliderM";
 import Navcat from "./components/NavCat";
-import MultipleItems from "./components/MultiCard";
+// import MultipleItems from "./components/MultiCard";
 import Gallery from "./components/Gallery";
 import AdminTab from "./pages/AdminTab";
 import Footer from "./layouts/footer/Footer";
@@ -49,6 +49,7 @@ import Sucess from "./components/Sucess";
 import Unsucess from "./components/Unsucess";
 import Basic from "./components/ordermodal";
 import CustomizedBadges from "./components/CartlistBadge";
+import NoResult from "./components/NoResult";
 
 function App() {
   const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
@@ -81,6 +82,8 @@ function App() {
         <Routing></Routing>
       </div>
       <Footer></Footer>
+      {/* 
+      <NoResult></NoResult> */}
 
       {/* <CustomizedBadges></CustomizedBadges> */}
 

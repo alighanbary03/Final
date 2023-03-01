@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "../components/Navbar";
 import Navcat from "../components/NavCat";
 import logo from "../assets/images/logo-img-01.svg";
-import logo2 from "../assets/images/logo.png";
+// import logo2 from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import {
   AiOutlineUser,
@@ -46,13 +46,15 @@ function NewHeader() {
               /> */}
             </div>
             <div className="title">
-              <img
+              {/* <img
                 className="brand"
                 style={{ borderRadius: "50px", height: "200px" }}
                 src={logo2}
-              ></img>
-              {/* <h1 style={{ fontFamily: "BNazanin" }}>لاکچری لند</h1> */}
-              {/* <img className="brand" src={logo}></img> */}
+              ></img> */}
+              <h1 style={{ fontFamily: "BNazanin", fontWeight: "bold" }}>
+                لاکچری لند
+              </h1>
+              <img className="brand" src={logo}></img>
             </div>
             <div className="text-end">
               <AiOutlineSearch

@@ -36,6 +36,7 @@ function JsonOrders() {
   const [phone, setPhone] = useState();
   const [orderDate, setOrderDate] = useState();
   const [currentDate, setCurrentDate] = useState();
+  const [finalDate, setFinalDate] = useState();
   const [orders, setOrders] = useState([]);
   const [status, setStatus] = useState(Boolean);
   const dispatch = useDispatch();
@@ -57,6 +58,7 @@ function JsonOrders() {
         setCurrentDate(response.data.currentDate);
         setOrders(response.data.orders);
         setStatus(response.data.status);
+        setFinalDate(response.data.finalDate);
       });
   }, [id]);
   const showModal = useSelector((state) => state.ui.menu.show);
@@ -267,6 +269,7 @@ function JsonOrders() {
         currentDate={currentDate}
         orders={orders}
         status={status}
+        finalDate={finalDate}
       />
       <h2 className="text-center" style={{ fontFamily: "BNazanin" }}>
         مدیریت سفارشات

@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { DatePicker } from "@kasraghoreyshi/datepicker";
 import "@kasraghoreyshi/calendar/styles.css";
 import "@kasraghoreyshi/datepicker/styles.css";
+import { DateInput } from "mantine-datepicker-jalali";
+import "dayjs/locale/fa";
 import { ptotal } from "./Cartlist";
 
 function Checkoutform() {
@@ -17,7 +19,10 @@ function Checkoutform() {
   // const [orderDate, setOrderDate] = useState();
   const total = useRef("");
   const status = useRef(false);
+  const finalDate = useRef("");
   const [orders, setOrders] = useState([]);
+
+  const [singleValue, setSingleValue] = useState();
 
   const [ptotal, setPtotal] = useState("");
 
@@ -70,6 +75,7 @@ function Checkoutform() {
       status: status.current,
       orders: orders,
       total: total.current.value,
+      finalDate: finalDate.current,
     };
 
     axios.post("http://localhost:3001/customers", payload).then(() => {
@@ -127,7 +133,7 @@ function Checkoutform() {
                     placeholder="آدرس"
                     ref={address}
                   />
-                  <label for="city">
+                  {/* <label for="city">
                     <i className="fa fa-institution"></i> تاریخ تحویل
                   </label>
                   <input
@@ -137,7 +143,22 @@ function Checkoutform() {
                     placeholder="1401/12/6"
                     style={{ display: "inline-block" }}
                     ref={orderDate}
-                  />
+                  /> */}
+
+                  <div>
+                    <DateInput
+                      label=" تاریخ تحویل"
+                      placeholder="تاریخ را وارد کنید"
+                      style={{ direction: "rtl" }} // RTL lable
+                      defaultValue={new Date()} // Initial date that is displayed, used for uncontrolled component
+                      value={singleValue}
+                      onChange={setSingleValue}
+                      locale="fa" // Required to use Jalali Calendar
+                      firstDayOfWeek={6} // number 0-6, 0 – Sunday, 6 – Saturday, defaults to 1 – Monday
+                      weekendDays={[5]} // Indices of weekend days, 0-6, where 0 is Sunday and 6 is Saturday, defaults to value defined in DatesProvider
+                      ref={orderDate}
+                    />
+                  </div>
                   <label for="city">
                     <i className="fa fa-institution"></i> شماره تلفن
                   </label>
