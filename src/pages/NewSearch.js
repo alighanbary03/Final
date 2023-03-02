@@ -6,8 +6,22 @@ import React, { useState, useEffect } from "react";
 import "../Style/components/NewSearch.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NoResult from "../components/NoResult";
 import { useNavigate } from "react-router-dom";
 import CatTitleSearch from "../components/CardTitleSearch";
+import {
+  MDBTable,
+  MDBTableBody,
+  MDBRow,
+  MDBCol,
+  MDBContainer,
+  MDBTableHead,
+  MDBBtn,
+  MDBBtnGroup,
+  MDBPagination,
+  MDBPaginationItem,
+  MDBPaginationLink,
+} from "mdb-react-ui-kit";
 function NewSearch() {
   // const [inputText, setInputText] = useState("");
   // let inputHandler = (e) => {
@@ -61,9 +75,9 @@ function NewSearch() {
           <button
             onClick={() => handleSearch()}
             style={{
+              width: "200px",
               marginLeft: "150px",
               marginTop: "20px",
-              padding: "20px",
               borderRadius: "20px",
               fontFamily: "BNazanin",
               backgroundColor: "black",
@@ -74,9 +88,11 @@ function NewSearch() {
           </button>
         </div>
       </div>
-      <Row xs={1} md={3} className="g-5">
-        {data.map((item, index) => (
-          <>
+      {data.length === 0 ? (
+        <NoResult></NoResult>
+      ) : (
+        <Row xs={1} md={3} className="g-5">
+          {data.map((item, index) => (
             <Col key={index} className="g-2">
               <div className="containerio">
                 <div className="card">
@@ -112,9 +128,9 @@ function NewSearch() {
                 </div>
               </div>
             </Col>
-          </>
-        ))}
-      </Row>
+          ))}
+        </Row>
+      )}
     </>
   );
 }

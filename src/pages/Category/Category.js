@@ -1,10 +1,10 @@
 import "../../App.css";
-import { Navbar } from "../../components/Navbar";
+// import { Navbar } from "../../components/Navbar";
 // import { Card } from "../../components/Card";
 import TextField from "@mui/material/TextField";
 import data from "../../data/data";
 import React, { useState, useEffect, useMemo } from "react";
-import Gridi from "../../components/Gridi";
+// import Gridi from "../../components/Gridi";
 // import Example from "../../components/ImgSlide";
 import Pagination from "../../components/Pagination";
 import FinalPagination from "../FinalPagination/FinalPagination";
@@ -71,7 +71,7 @@ function Category() {
       {/* <Example></Example> */}
       <div className="main">
         <div className="left">
-          <Navbar filter={filter} setfilter={setFilter} len={json.length} />
+          {/* <Navbar filter={filter} setfilter={setFilter} len={json.length} /> */}
           {/* <div className="card-section">
             {json.map((item, index) => (
               <Card

@@ -9,7 +9,7 @@ import { Carousel } from "@trendyol-js/react-carousel";
 // import { Card } from "./components/Card";
 import { useState, useEffect } from "react";
 import data from "./data/data";
-import Grid from "./components/Gridi.js";
+// import Grid from "./components/Gridi.js";
 import Routing from "./Routers/Routing";
 import Searchbar from "./pages/Searchbar";
 import FinalPagination from "./pages/FinalPagination/FinalPagination";

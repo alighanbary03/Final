@@ -6,7 +6,7 @@ import { Carousel } from "@trendyol-js/react-carousel";
 // import { Card } from "../../components/Card";
 import { useState, useEffect } from "react";
 import data from "../../data/data";
-import Grid from "../../components/Gridi.js";
+// import Grid from "../../components/Gridi.js";
 import Routing from "../../Routers/Routing";
 // import { Modals } from "../../components/Modals";
 // import { Menubar } from "../../components/Menubar";

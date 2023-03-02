@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../components/Navbar";
+// import { Navbar } from "../components/Navbar";
 import Navcat from "../components/NavCat";
 import logo from "../assets/images/logo-img-01.svg";
 // import logo2 from "../assets/images/logo.png";
