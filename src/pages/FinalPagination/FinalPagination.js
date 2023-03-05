@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import Pagination from "../../components/Pagination";
+// import Pagination from "../../components/Pagination";
 import data from "../../data/ListData.json";
 import "../../Style/FinalPagination.css";
 // import { Card } from "../../components/Card";
@@ -34,13 +34,13 @@ export default function FinalPagination() {
           })}
         </tbody> */}
       </table>
-      <Pagination
+      {/* <Pagination
         className="pagination-bar"
         currentPage={currentPage}
         totalCount={data.length}
         pageSize={PageSize}
         onPageChange={(page) => setCurrentPage(page)}
-      />
+      /> */}
     </>
   );
 }

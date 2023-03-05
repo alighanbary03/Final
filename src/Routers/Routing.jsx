@@ -31,7 +31,7 @@ import Cartlist from "../pages/Cartlist";
 import Payment from "../components/Payment";
 import Sucess from "../components/Sucess";
 import Unsucess from "../components/Unsucess";
-import UpdateStatus from "../components/UpdateStatus";
+// import UpdateStatus from "../components/UpdateStatus";
 
 function Routing() {
   return (
@@ -66,7 +66,7 @@ function Routing() {
       <Route path="/Payment" element={<Payment />}></Route>
       <Route path="/sucess" element={<Sucess />}></Route>
       <Route path="/unsucess" element={<Unsucess />}></Route>
-      <Route path="/updatestatus" element={<UpdateStatus />}></Route>
+      {/* <Route path="/updatestatus" element={<UpdateStatus />}></Route> */}
     </Routes>
   );
 }

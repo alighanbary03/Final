@@ -47,7 +47,7 @@ import Checkoutform from "./pages/Checkoutform";
 import Payment from "./components/Payment";
 import Sucess from "./components/Sucess";
 import Unsucess from "./components/Unsucess";
-import Basic from "./components/ordermodal";
+// import Basic from "./components/ordermodal";
 import CustomizedBadges from "./components/CartlistBadge";
 import NoResult from "./components/NoResult";
 

@@ -6,7 +6,7 @@ import data from "../../data/data";
 import React, { useState, useEffect, useMemo } from "react";
 // import Gridi from "../../components/Gridi";
 // import Example from "../../components/ImgSlide";
-import Pagination from "../../components/Pagination";
+// import Pagination from "../../components/Pagination";
 import FinalPagination from "../FinalPagination/FinalPagination";
 
 function Category() {
