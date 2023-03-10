@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./layouts/header/Header";
+// import Header from "./layouts/header/Header";
 
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import About from "./pages/Category/Category";
 import { Carousel } from "@trendyol-js/react-carousel";
 // import { Card } from "./components/Card";
 import { useState, useEffect } from "react";
-import data from "./data/data";
+// import data from "./data/data";
 // import Grid from "./components/Gridi.js";
 import Routing from "./Routers/Routing";
 import Searchbar from "./pages/Searchbar";
@@ -19,7 +19,7 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 // import Example from "./components/ImgSlide";
 // import AllFruits from "./pages/AllFruits";
-import AddFruit from "./pages/AddProduct/AddFruit";
+// import AddFruit from "./pages/AddProduct/AddFruit";
 import UpdateFruit from "./pages/UpdateFruit";
 // import PaginatedItems from "./components/MainPaginate";
 // import MainPaginate from "./components/MainPaginate";
@@ -52,7 +52,7 @@ import CustomizedBadges from "./components/CartlistBadge";
 import NoResult from "./components/NoResult";
 
 function App() {
-  const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
+  // const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
   const [cardlist, setCardlist] = useState([]);
   const [show, setShow] = useState({
     show: false,

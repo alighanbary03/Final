@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 // import Layout from "../../components/shared/Layout";
 
 // import AllFruits from "../AllFruits";
-import AddFruit from "../AddProduct/AddFruit";
+// import AddFruit from "../AddProduct/AddFruit";
 import UpdateFruit from "../UpdateFruit";
 // import LayoutCart from "../../components/shared/LayoutCart";
 function Admin() {

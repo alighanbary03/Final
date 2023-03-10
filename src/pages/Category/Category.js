@@ -2,7 +2,7 @@ import "../../App.css";
 // import { Navbar } from "../../components/Navbar";
 // import { Card } from "../../components/Card";
 import TextField from "@mui/material/TextField";
-import data from "../../data/data";
+// import data from "../../data/data";
 import React, { useState, useEffect, useMemo } from "react";
 // import Gridi from "../../components/Gridi";
 // import Example from "../../components/ImgSlide";
@@ -10,7 +10,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import FinalPagination from "../FinalPagination/FinalPagination";
 
 function Category() {
-  const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
+  // const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
 
   const [filter, setFilter] = useState({
     price: "lowest",
@@ -48,24 +48,24 @@ function Category() {
     sizes: [],
   });
 
-  useEffect(() => {
-    let arr = [];
+  // useEffect(() => {
+  //   let arr = [];
 
-    label: for (let i = 0; i < data.length; i++) {
-      for (let h = 0; h < data[i].size.length; h++) {
-        if (data[i].size[h] === filter.size) {
-          arr.push(data[i]);
-          continue label;
-        }
-      }
-    }
+  // label: for (let i = 0; i < data.length; i++) {
+  //   for (let h = 0; h < data[i].size.length; h++) {
+  //     if (data[i].size[h] === filter.size) {
+  //       arr.push(data[i]);
+  //       continue label;
+  //     }
+  //   }
+  // }
 
-    if (filter.price === "lowest") {
-      setJson(arr.sort((a, b) => a.price - b.price));
-    } else {
-      setJson(arr.sort((a, b) => b.price - a.price));
-    }
-  }, [filter]);
+  //   if (filter.price === "lowest") {
+  //     setJson(arr.sort((a, b) => a.price - b.price));
+  //   } else {
+  //     setJson(arr.sort((a, b) => b.price - a.price));
+  //   }
+  // }, [filter]);
   return (
     <>
       {/* <Example></Example> */}

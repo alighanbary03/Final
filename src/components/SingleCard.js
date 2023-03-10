@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import DeleteConfirmation from "../components/shared/DeleteConfirmation";
-import data from "../data/data";
+// import data from "../data/data";
 import "../Style/components/RandomCard.css";
 
 function SingleCard() {

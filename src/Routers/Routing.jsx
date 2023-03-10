@@ -6,7 +6,7 @@ import FinalPagination from "../pages/FinalPagination/FinalPagination";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Admin from "../pages/Admin/Admin";
-import AddFruit from "../pages/AddProduct/AddFruit";
+// import AddFruit from "../pages/AddProduct/AddFruit";
 import UpdateFruit from "../pages/UpdateFruit";
 import AdminPanel from "../pages/AdminPanel/AdminPanel";
 import Orders from "../pages/Orders";
@@ -43,7 +43,7 @@ function Routing() {
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/register" element={<Registration />} />
       <Route exact path="/cardlist" element={<Admin />} />
-      <Route path="/add-fruit" element={<AddFruit />}></Route>
+      {/* <Route path="/add-fruit" element={<AddFruit />}></Route> */}
       <Route path="/update-fruit/:id" element={<UpdateFruit />}></Route>
       <Route path="/admin" element={<AdminPanel />}></Route>
       <Route path="/orders" element={<Orders />}></Route>

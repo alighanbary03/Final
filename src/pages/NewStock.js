@@ -10,7 +10,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DeleteConfirmation from "../components/shared/DeleteConfirmation";
 import ImageRenderer from "../components/ImageRenderer";
-import data from "../data/data";
+// import data from "../data/data";
 const initialValue = {
   name: "",
   quantity: "",

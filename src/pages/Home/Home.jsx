@@ -1,17 +1,17 @@
 import React from "react";
-import Header from "../../layouts/header/Header";
+// import Header from "../../layouts/header/Header";
 // import Example from "../../components/ImgSlide";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Carousel } from "@trendyol-js/react-carousel";
 // import { Card } from "../../components/Card";
 import { useState, useEffect } from "react";
-import data from "../../data/data";
+// import data from "../../data/data";
 // import Grid from "../../components/Gridi.js";
 import Routing from "../../Routers/Routing";
 // import { Modals } from "../../components/Modals";
 // import { Menubar } from "../../components/Menubar";
 // import { Cardlist } from "../../components/Cardlist";
-import { Pay } from "../../components/Pay";
+// import { Pay } from "../../components/Pay";
 // import { Form } from "../../components/Form";
 // import { Mainform } from "../../components/MainForm";
 
@@ -40,7 +40,7 @@ import CatTitleSpo from "../../components/CatTitleSpor";
 import CatTitleRandom from "../../components/CatTitleRandom";
 
 function Home() {
-  const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
+  // const [json, setJson] = useState(data.sort((a, b) => a.price - b.price));
 
   const [filter, setFilter] = useState({
     price: "lowest",
@@ -78,24 +78,24 @@ function Home() {
     sizes: [],
   });
 
-  useEffect(() => {
-    let arr = [];
+  // useEffect(() => {
+  //   let arr = [];
 
-    label: for (let i = 0; i < data.length; i++) {
-      for (let h = 0; h < data[i].size.length; h++) {
-        if (data[i].size[h] === filter.size) {
-          arr.push(data[i]);
-          continue label;
-        }
-      }
-    }
+  //   label: for (let i = 0; i < data.length; i++) {
+  //     for (let h = 0; h < data[i].size.length; h++) {
+  //       if (data[i].size[h] === filter.size) {
+  //         arr.push(data[i]);
+  //         continue label;
+  //       }
+  //     }
+  //   }
 
-    if (filter.price === "lowest") {
-      setJson(arr.sort((a, b) => a.price - b.price));
-    } else {
-      setJson(arr.sort((a, b) => b.price - a.price));
-    }
-  }, [filter]);
+  //   if (filter.price === "lowest") {
+  //     setJson(arr.sort((a, b) => a.price - b.price));
+  //   } else {
+  //     setJson(arr.sort((a, b) => b.price - a.price));
+  //   }
+  // }, [filter]);
   return (
     <>
       <div className="z1">

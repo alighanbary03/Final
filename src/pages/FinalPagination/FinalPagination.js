@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 // import Pagination from "../../components/Pagination";
-import data from "../../data/ListData.json";
+// import data from "../../data/ListData.json";
 import "../../Style/FinalPagination.css";
 // import { Card } from "../../components/Card";
 
@@ -12,7 +12,7 @@ export default function FinalPagination() {
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return data.slice(firstPageIndex, lastPageIndex);
+    // return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
   return (
